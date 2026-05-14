@@ -10,12 +10,14 @@
       {%- assign product = block.settings.product -%}
       <div class="group relative flex flex-col items-center">
         <!-- Image Wrapper -->
-        <div class="w-full aspect-[3/4] bg-surface-container-low rounded-sm overflow-hidden flex items-center justify-center p-8 transition-all duration-700 group-hover:bg-[#f3f0e8]">
-          {%- if product != blank -%}
-            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'object-contain w-full h-full group-hover:scale-105 transition-transform duration-1000' }}
-          {%- else -%}
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-1000" alt="Placeholder">
-          {%- endif -%}
+        <div class="w-full aspect-[3/4] bg-surface-container-low rounded-sm overflow-hidden relative transition-all duration-700 group-hover:bg-[#f3f0e8]">
+          <a href="{{ product.url | default: '#' }}" class="block w-full h-full p-8">
+            {%- if product != blank -%}
+              {{ product.featured_image | image_url: width: 800 | image_tag: class: 'object-contain w-full h-full group-hover:scale-105 transition-transform duration-1000' }}
+            {%- else -%}
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-1000" alt="Placeholder">
+            {%- endif -%}
+          </a>
           
           <!-- Quick Add Button Overlay -->
           <div class="absolute bottom-6 left-6 right-6 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">

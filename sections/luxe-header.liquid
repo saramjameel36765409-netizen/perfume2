@@ -53,11 +53,12 @@
     x-transition:leave-end="-translate-x-full"
     class="fixed inset-0 z-[60] bg-primary md:hidden"
     style="display: none;"
+    @click.away="mobileMenuOpen = false"
   >
-    <div class="flex flex-col h-full p-8">
+    <div class="flex flex-col h-full p-8 shadow-2xl border-r border-surface-container-highest/20">
       <div class="flex justify-between items-center mb-12">
         <span class="font-display text-2xl text-secondary-fixed italic">Menu</span>
-        <button class="text-secondary-fixed" @click="mobileMenuOpen = false">
+        <button class="text-secondary-fixed p-2 -mr-2" @click="mobileMenuOpen = false">
           <span class="material-symbols-outlined">close</span>
         </button>
       </div>

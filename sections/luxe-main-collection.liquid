@@ -24,16 +24,20 @@
     <!-- Product Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-x-gutter gap-y-16">
       {%- for product in collection.products -%}
-        <div class="group">
-          <div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden p-8 flex items-center justify-center relative">
-            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain group-hover:scale-105 transition-transform duration-700' }}
-            <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <a href="{{ product.url }}" class="absolute bottom-6 left-6 right-6 bg-primary text-secondary-fixed font-label-md text-label-md uppercase py-3 text-center rounded opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-              QUICK VIEW
-            </a>
-          </div>
+        <div class="group relative">
+          <a href="{{ product.url }}" class="block">
+            <div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden p-8 flex items-center justify-center relative transition-all duration-700 group-hover:bg-[#f3f0e8]">
+              {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain group-hover:scale-105 transition-transform duration-700' }}
+              <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div class="absolute bottom-6 left-6 right-6 bg-primary text-secondary-fixed font-label-md text-label-md uppercase py-3 text-center rounded opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 z-10">
+                VIEW PRODUCT
+              </div>
+            </div>
+          </a>
           <div class="mt-6 text-center">
-            <h3 class="font-headline-md text-headline-md text-primary mb-2">{{ product.title }}</h3>
+            <h3 class="font-headline-md text-headline-md text-primary mb-2 italic">
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h3>
             <p class="font-body-md text-body-md text-on-surface-variant">{{ product.price | money }}</p>
           </div>
         </div>

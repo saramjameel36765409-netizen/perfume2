@@ -1,66 +1,77 @@
-<footer class="bg-primary text-surface-container-low pt-24 pb-12 px-margin-mobile md:px-margin-desktop">
+<footer class="bg-primary text-secondary-fixed pt-24 pb-12 px-margin-mobile md:px-margin-desktop border-t border-surface-container-highest/10">
   <div class="max-w-container-max mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-12 mb-24">
-      <!-- Brand -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+      <!-- Brand Story -->
       <div class="md:col-span-1">
-        <a href="/" class="flex flex-col mb-8">
-          <span class="font-display text-[28px] text-secondary-fixed italic leading-none tracking-tight">LUXE AURA</span>
-          <span class="font-body text-[10px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">PARIS</span>
+        <a href="/" class="flex flex-col items-start group mb-8">
+          <span class="font-display text-3xl text-secondary-fixed italic leading-none">{{ section.settings.logo_text | default: 'LUXE AURA' }}</span>
+          <span class="font-body text-[10px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">{{ section.settings.tagline | default: 'PARIS' }}</span>
         </a>
-        <p class="font-body text-body-md text-surface-container-low/60 mb-10 max-w-xs leading-relaxed">
-          {{ section.settings.description | default: 'Crafting prestige fragrances since 1924. Experience the art of scent.' }}
+        <p class="font-body text-body-md text-surface-container-low/60 leading-relaxed max-w-xs">
+          {{ section.settings.description | default: 'Crafting exceptional fragrances since 1924. Our mission is to provide an aura of prestige for the modern connoisseur.' }}
         </p>
-        <div class="flex gap-6">
-          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-sm flex items-center justify-center hover:border-secondary-fixed hover:text-secondary-fixed transition-all group">
-            <span class="material-symbols-outlined text-[18px]">share</span>
-          </a>
-          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-sm flex items-center justify-center hover:border-secondary-fixed hover:text-secondary-fixed transition-all group">
-            <span class="material-symbols-outlined text-[18px]">mail</span>
-          </a>
-        </div>
       </div>
 
-      <!-- Links -->
-      <div class="grid grid-cols-2 md:grid-cols-2 md:col-span-2 gap-8">
-        <div>
-          <h5 class="font-body text-label-md text-secondary-fixed uppercase mb-8 tracking-[0.2em]">SHOP</h5>
-          <ul class="space-y-4 font-body text-body-sm text-surface-container-low/60">
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Fragrances</a></li>
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Collections</a></li>
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Gift Sets</a></li>
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">New Arrivals</a></li>
-          </ul>
-        </div>
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-body text-label-lg text-secondary-fixed uppercase tracking-[0.2em] mb-8">SHOP</h4>
+        <nav class="flex flex-col gap-4">
+          {%- for link in section.settings.shop_menu.links -%}
+            <a href="{{ link.url }}" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">{{ link.title }}</a>
+          {%- endfor -%}
+          {%- if section.settings.shop_menu == blank -%}
+            <a href="/collections/all" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">All Fragrances</a>
+            <a href="/collections/signature" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">Signature Series</a>
+            <a href="/collections/limited" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">Limited Editions</a>
+          {%- endif -%}
+        </nav>
+      </div>
 
-        <div>
-          <h5 class="font-body text-label-md text-secondary-fixed uppercase mb-8 tracking-[0.2em]">SUPPORT</h5>
-          <ul class="space-y-4 font-body text-body-sm text-surface-container-low/60">
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Contact Us</a></li>
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Shipping & Returns</a></li>
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">FAQ</a></li>
-            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Privacy Policy</a></li>
-          </ul>
-        </div>
+      <!-- Information -->
+      <div>
+        <h4 class="font-body text-label-lg text-secondary-fixed uppercase tracking-[0.2em] mb-8">DISCOVER</h4>
+        <nav class="flex flex-col gap-4">
+          {%- for link in section.settings.info_menu.links -%}
+            <a href="{{ link.url }}" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">{{ link.title }}</a>
+          {%- endfor -%}
+          {%- if section.settings.info_menu == blank -%}
+            <a href="/pages/our-story" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">Our Story</a>
+            <a href="/pages/contact" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">Contact Us</a>
+            <a href="/pages/shipping" class="font-body text-body-md text-surface-container-low/60 hover:text-secondary-fixed transition-colors">Shipping & Returns</a>
+          {%- endif -%}
+        </nav>
       </div>
 
       <!-- Newsletter -->
       <div>
-        <h5 class="font-body text-label-md text-secondary-fixed uppercase mb-8 tracking-[0.2em]">NEWSLETTER</h5>
-        <p class="font-body text-body-sm text-surface-container-low/60 mb-8 leading-relaxed">Join our elite circle for exclusive drops and prestige events.</p>
-        <form class="group relative">
-          <input type="email" placeholder="YOUR EMAIL" class="bg-transparent border-b border-surface-container-low/20 pb-4 focus:border-secondary-fixed focus:ring-0 text-surface-container-low placeholder:text-surface-container-low/30 w-full font-body text-body-sm tracking-widest outline-none transition-all">
-          <button type="submit" class="absolute right-0 bottom-4 text-secondary-fixed hover:translate-x-1 transition-transform">
-            <span class="material-symbols-outlined">arrow_right_alt</span>
+        <h4 class="font-body text-label-lg text-secondary-fixed uppercase tracking-[0.2em] mb-8">NEWSLETTER</h4>
+        <p class="font-body text-body-md text-surface-container-low/60 mb-6">Join our elite circle for early access and exclusive drops.</p>
+        {%- form 'customer', class: 'relative' -%}
+          <input type="email" name="contact[email]" placeholder="Email address" class="w-full bg-transparent border-b border-surface-container-highest/30 py-3 font-body text-body-md text-secondary-fixed focus:outline-none focus:border-[#D4AF37] transition-colors pr-12 placeholder:text-surface-container-low/30">
+          <button type="submit" class="absolute right-0 top-1/2 -translate-y-1/2 text-secondary-fixed hover:text-[#D4AF37] transition-colors">
+            <span class="material-symbols-outlined">arrow_forward</span>
           </button>
-        </form>
+        {%- endform -%}
       </div>
     </div>
 
-    <div class="pt-12 border-t border-surface-container-low/10 flex flex-col md:flex-row items-center justify-between gap-8 font-body text-[11px] text-surface-container-low/30 tracking-[0.1em]">
-      <p>© {{ 'now' | date: "%Y" }} LUXE AURA PARIS. ALL RIGHTS RESERVED.</p>
-      <div class="flex gap-12">
-        <a href="#" class="hover:text-secondary-fixed transition-colors uppercase">TERMS OF SERVICE</a>
-        <a href="#" class="hover:text-secondary-fixed transition-colors uppercase">PRIVACY POLICY</a>
+    <!-- Bottom Bar -->
+    <div class="pt-12 border-t border-surface-container-highest/10 flex flex-col md:flex-row items-center justify-between gap-8">
+      <p class="font-body text-body-sm text-surface-container-low/40 uppercase tracking-widest">&copy; {{ 'now' | date: '%Y' }} Luxe Aura. All rights reserved.</p>
+      
+      <div class="flex items-center gap-8">
+        <div class="flex items-center gap-6 text-surface-container-low/40">
+          <!-- Social Icons (Placeholders) -->
+          <a href="#" class="hover:text-secondary-fixed transition-colors">IG</a>
+          <a href="#" class="hover:text-secondary-fixed transition-colors">FB</a>
+          <a href="#" class="hover:text-secondary-fixed transition-colors">TW</a>
+        </div>
+        <div class="flex items-center gap-4">
+           <!-- Payment Icons (Standard Shopify loop would go here) -->
+           <div class="w-8 h-5 bg-surface-container-low/10 rounded-sm"></div>
+           <div class="w-8 h-5 bg-surface-container-low/10 rounded-sm"></div>
+           <div class="w-8 h-5 bg-surface-container-low/10 rounded-sm"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -71,9 +82,31 @@
   "name": "Luxe Footer",
   "settings": [
     {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "LUXE AURA"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "PARIS"
+    },
+    {
       "type": "textarea",
       "id": "description",
-      "label": "Brand Description"
+      "label": "Description"
+    },
+    {
+      "type": "link_list",
+      "id": "shop_menu",
+      "label": "Shop Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "info_menu",
+      "label": "Info Menu"
     }
   ],
   "presets": [
