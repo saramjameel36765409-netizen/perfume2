@@ -1,0 +1,91 @@
+<section class="py-[120px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface-lowest">
+  <div class="text-center mb-16">
+    <h2 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase">{{ section.settings.title }}</h2>
+    <div class="w-16 h-1 bg-[#D4AF37] mx-auto"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+    {%- for block in section.blocks -%}
+      {%- assign product = block.settings.product -%}
+      <div class="group bg-surface-container-lowest rounded-lg border border-[#F4F4F4] overflow-hidden transition-all duration-300 hover:shadow-[0_24px_24px_-12px_rgba(0,0,0,0.04)] relative">
+        <div class="aspect-[3/4] overflow-hidden bg-surface-container-low p-8 flex items-center justify-center">
+          {%- if product != blank -%}
+            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'object-contain w-full h-full group-hover:scale-105 transition-transform duration-500' }}
+          {%- else -%}
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500" alt="Placeholder">
+          {%- endif -%}
+        </div>
+        <div class="p-6 text-center">
+          {%- if block.settings.tag != blank -%}
+            <span class="inline-block bg-primary text-secondary-fixed font-body-sm text-body-sm uppercase px-2 py-1 mb-3">{{ block.settings.tag }}</span>
+          {%- endif -%}
+          <h3 class="font-headline-md text-headline-md text-primary mb-2">
+            {%- if product != blank -%}{{ product.title }}{%- else -%}Midnight Amber{%- endif -%}
+          </h3>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-4">
+            {%- if product != blank -%}{{ product.price | money }}{%- else -%}$245.00{%- endif -%}
+          </p>
+          
+          {%- if product != blank -%}
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <button type="submit" class="w-full py-3 border border-[#D4AF37] text-[#D4AF37] font-label-md text-label-md uppercase rounded hover:bg-[#D4AF37] hover:text-primary transition-colors duration-300">
+                ADD TO CART
+              </button>
+            </form>
+          {%- else -%}
+            <button class="w-full py-3 border border-[#D4AF37] text-[#D4AF37] font-label-md text-label-md uppercase rounded hover:bg-[#D4AF37] hover:text-primary transition-colors duration-300">
+                ADD TO CART
+            </button>
+          {%- endif -%}
+        </div>
+        <!-- Hover Aura Glow -->
+        <div class="absolute inset-0 border border-transparent group-hover:border-[#D4AF37]/30 rounded-lg pointer-events-none transition-colors duration-300"></div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Signature Series",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Signature Series"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag (e.g. EXCLUSIVE)",
+          "default": "EXCLUSIVE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxe Signature Series",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

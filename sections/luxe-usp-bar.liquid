@@ -1,0 +1,58 @@
+<section class="bg-primary py-12 px-margin-mobile">
+  <div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+    {%- for block in section.blocks -%}
+      <div class="flex flex-col items-center text-center">
+        <div class="mb-4 text-secondary-fixed">
+          <span class="material-symbols-outlined text-[40px]">{{ block.settings.icon }}</span>
+        </div>
+        <h4 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-1">{{ block.settings.title }}</h4>
+        <p class="font-body-sm text-body-sm text-surface-container-low/60 uppercase tracking-tighter">{{ block.settings.text }}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe USP Bar",
+  "max_blocks": 4,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Material Icon Name",
+          "default": "potted_plant"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ethically Sourced"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Subtext",
+          "default": "Sustainable luxury at its finest."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxe USP Bar",
+      "blocks": [
+        { "type": "usp", "settings": { "icon": "potted_plant", "title": "Ethically Sourced", "text": "Sustainable luxury at its finest." } },
+        { "type": "usp", "settings": { "icon": "verified", "title": "Premium Quality", "text": "Crafted by master perfumers." } },
+        { "type": "usp", "settings": { "icon": "local_shipping", "title": "Fast Delivery", "text": "Worldwide shipping available." } },
+        { "type": "usp", "settings": { "icon": "lock", "title": "Secure Payment", "text": "100% secure checkout." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

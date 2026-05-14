@@ -1,0 +1,86 @@
+<footer class="bg-primary text-surface-container-low pt-24 pb-12 px-margin-mobile md:px-margin-desktop">
+  <div class="max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a href="/" class="flex flex-col mb-6">
+          <span class="font-display-lg text-[28px] text-secondary-fixed italic leading-none">LUXE AURA</span>
+          <span class="font-body-sm text-[10px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">PARIS</span>
+        </a>
+        <p class="font-body-md text-body-md text-surface-container-low/60 mb-8 max-w-xs">
+          {{ section.settings.description | default: 'Crafting prestige fragrances since 1924. Experience the art of scent.' }}
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-full flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-full flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-full flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all">
+            <i class="fab fa-pinterest-p"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h5 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-8 tracking-widest">SHOP</h5>
+        <ul class="space-y-4 font-body-md text-body-md text-surface-container-low/60">
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Fragrances</a></li>
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Collections</a></li>
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Gift Sets</a></li>
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">New Arrivals</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-8 tracking-widest">SUPPORT</h5>
+        <ul class="space-y-4 font-body-md text-body-md text-surface-container-low/60">
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Contact Us</a></li>
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Shipping & Returns</a></li>
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">FAQ</a></li>
+          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h5 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-8 tracking-widest">NEWSLETTER</h5>
+        <p class="font-body-md text-body-md text-surface-container-low/60 mb-6">Join our elite circle for exclusive drops and prestige events.</p>
+        <form class="flex border-b border-surface-container-low/20 pb-2">
+          <input type="email" placeholder="YOUR EMAIL" class="bg-transparent border-none focus:ring-0 text-surface-container-low placeholder:text-surface-container-low/40 w-full uppercase text-xs tracking-widest">
+          <button type="submit" class="text-secondary-fixed">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-surface-container-low/10 flex flex-col md:flex-row items-center justify-between gap-6 font-body-sm text-body-sm text-surface-container-low/40">
+      <p>© {{ 'now' | date: "%Y" }} LUXE AURA PARIS. ALL RIGHTS RESERVED.</p>
+      <div class="flex gap-8">
+        <a href="#" class="hover:text-secondary-fixed transition-colors">TERMS OF SERVICE</a>
+        <a href="#" class="hover:text-secondary-fixed transition-colors">PRIVACY POLICY</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Luxe Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Brand Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxe Footer"
+    }
+  ]
+}
+{% endschema %}

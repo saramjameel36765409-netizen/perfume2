@@ -1,0 +1,71 @@
+<section class="bg-background py-20 px-margin-mobile md:px-margin-desktop min-h-screen">
+  <div class="max-w-container-max mx-auto">
+    <!-- Collection Header -->
+    <div class="text-center mb-20">
+      <h1 class="font-display-lg text-display-lg text-primary italic mb-4 uppercase">{{ collection.title | default: 'Fragrance Collection' }}</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto italic">
+        {{ collection.description | default: 'A curated selection of our finest prestige scents, crafted for the discerning individual.' }}
+      </p>
+    </div>
+
+    <!-- Filters & Sort (Simplified for Design) -->
+    <div class="flex items-center justify-between mb-12 border-y border-outline-variant py-6">
+      <div class="flex gap-8 items-center">
+        <button class="flex items-center gap-2 font-label-md text-label-md text-primary uppercase tracking-widest">
+          <span class="material-symbols-outlined">filter_list</span> FILTER
+        </button>
+        <span class="text-on-surface-variant text-body-sm uppercase tracking-widest">{{ collection.products_count }} PRODUCTS</span>
+      </div>
+      <div class="flex items-center gap-2 font-label-md text-label-md text-primary uppercase tracking-widest cursor-pointer">
+        SORT BY <span class="material-symbols-outlined">expand_more</span>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-gutter gap-y-16">
+      {%- for product in collection.products -%}
+        <div class="group">
+          <div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden p-8 flex items-center justify-center relative">
+            {{ product.featured_image | image_url: width: 800 | image_tag: class: 'w-full h-full object-contain group-hover:scale-105 transition-transform duration-700' }}
+            <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <a href="{{ product.url }}" class="absolute bottom-6 left-6 right-6 bg-primary text-secondary-fixed font-label-md text-label-md uppercase py-3 text-center rounded opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              QUICK VIEW
+            </a>
+          </div>
+          <div class="mt-6 text-center">
+            <h3 class="font-headline-md text-headline-md text-primary mb-2">{{ product.title }}</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant">{{ product.price | money }}</p>
+          </div>
+        </div>
+      {%- else -%}
+        {%- for i in (1..6) -%}
+            <div class="group">
+              <div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden p-8 flex items-center justify-center relative">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700" alt="Product">
+                <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <button class="absolute bottom-6 left-6 right-6 bg-primary text-secondary-fixed font-label-md text-label-md uppercase py-3 text-center rounded opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                  QUICK VIEW
+                </button>
+              </div>
+              <div class="mt-6 text-center">
+                <h3 class="font-headline-md text-headline-md text-primary mb-2">Midnight Amber</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">$245.00</p>
+              </div>
+            </div>
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Main Collection",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Luxe Main Collection"
+    }
+  ]
+}
+{% endschema %}

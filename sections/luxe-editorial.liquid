@@ -1,0 +1,89 @@
+<section class="bg-background py-32 px-margin-mobile md:px-margin-desktop overflow-hidden">
+  <div class="max-w-container-max mx-auto">
+    <!-- Hero Image & Title -->
+    <div class="relative mb-32 group">
+      <div class="aspect-[21/9] rounded-lg overflow-hidden">
+        {%- if section.settings.hero_image != blank -%}
+          {{ section.settings.hero_image | image_url: width: 3000 | image_tag: class: 'w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000' }}
+        {%- else -%}
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" alt="Our Story">
+        {%- endif -%}
+      </div>
+      <div class="absolute inset-0 bg-primary/40 flex items-center justify-center p-8">
+        <div class="text-center">
+          <p class="font-label-lg text-label-lg text-secondary-fixed uppercase tracking-[0.5em] mb-4">SINCE 1924</p>
+          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-secondary-fixed italic leading-tight">{{ page.title | default: 'Our Legacy' }}</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Blocks -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center mb-32">
+      <div class="space-y-8">
+        <h2 class="font-headline-xl text-headline-xl text-primary uppercase">{{ section.settings.heading_1 | default: 'The Art of Preservation' }}</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+           {{ section.settings.text_1 | default: 'Every bottle of Luxe Aura is a testament to time. We believe that true luxury cannot be rushed. Our aging process takes years, ensuring each note settles into a harmonious symphony that lasts for days on the skin.' }}
+        </p>
+        <div class="grid grid-cols-2 gap-8 border-t border-outline-variant pt-8">
+          <div>
+            <p class="font-display-lg text-display-lg text-[#D4AF37] italic mb-1">98%</p>
+            <p class="font-label-md text-label-md text-primary uppercase tracking-widest">Natural Ingredients</p>
+          </div>
+          <div>
+            <p class="font-display-lg text-display-lg text-[#D4AF37] italic mb-1">120h</p>
+            <p class="font-label-md text-label-md text-primary uppercase tracking-widest">Long Lasting Wear</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg overflow-hidden aspect-square">
+        {%- if section.settings.image_1 != blank -%}
+          {{ section.settings.image_1 | image_url: width: 1000 | image_tag: class: 'w-full h-full object-cover' }}
+        {%- else -%}
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="w-full h-full object-cover" alt="Artisan">
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Quote Section -->
+    <div class="bg-surface-container-low rounded-lg p-16 md:p-32 text-center mb-32 relative overflow-hidden">
+        <span class="font-display-lg text-[120px] text-primary/5 absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 select-none">"</span>
+        <h3 class="font-headline-xl text-headline-xl text-primary mb-8 italic max-w-4xl mx-auto leading-tight">
+            "A fragrance is more than just a scent; it is an aura that precedes you and lingers long after you have left."
+        </h3>
+        <p class="font-label-lg text-label-lg text-[#D4AF37] uppercase tracking-widest">— MARCEL DU PONT, FOUNDER</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Editorial",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading 1"
+    },
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Text 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Side Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxe Editorial"
+    }
+  ]
+}
+{% endschema %}

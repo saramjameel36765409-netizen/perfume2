@@ -1,0 +1,113 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+<section class="bg-background py-20 px-margin-mobile md:px-margin-desktop">
+  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+    <!-- Product Gallery -->
+    <div class="space-y-4">
+      <div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center p-12">
+        {%- if product.featured_image != blank -%}
+          {{ product.featured_image | image_url: width: 1200 | image_tag: class: 'w-full h-full object-contain hover:scale-105 transition-transform duration-700' }}
+        {%- else -%}
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRQl8tsTi748apldWsA5bIG9McE3KLWcZIGZHsIxoIUINNlWK28b_lN4ju5n342SRcUkhAaHkjm3MuII31UcPF9WPAXudEXn8KhUJ9hzpvKd2-Xrp4X9pGnPapgVP3KeSlhe5QuQy356iIU8Eg8vXlOeimbMRl9xqKnI4ix5QzgCwjL7Eg6PksURkZ1yN42G6H_C5prZpEXf_o8uv0kg2o-f9msZvjZ8tTWYLzjLFfxoA-YPFWKpRKofQRNlVhP4RWV9vLoPnzA" class="w-full h-full object-contain" alt="Signature Gold">
+        {%- endif -%}
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        {%- for image in product.images limit: 4 -%}
+          <div class="aspect-square bg-surface-container rounded overflow-hidden cursor-pointer border-2 {% if forloop.first %}border-[#D4AF37]{% else %}border-transparent{% endif %}">
+            {{ image | image_url: width: 300 | image_tag: class: 'w-full h-full object-cover' }}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="flex flex-col">
+      <div class="mb-8">
+        <span class="inline-block bg-[#D4AF37]/10 text-[#D4AF37] font-label-md text-label-md uppercase px-3 py-1 rounded mb-4">SIGNATURE SERIES</span>
+        <h1 class="font-headline-xl text-headline-xl text-primary mb-4">{{ product.title | default: 'Signature Gold' }}</h1>
+        <div class="flex items-center gap-4 mb-6">
+          <p class="font-headline-md text-headline-md text-primary">{{ current_variant.price | money | default: '$245.00' }}</p>
+          <div class="flex text-[#D4AF37]">
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="material-symbols-outlined text-[18px]">star</span>
+            <span class="text-on-surface-variant text-body-sm ml-2">(48 Reviews)</span>
+          </div>
+        </div>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+          {{ product.description | default: 'An opulent blend of pure saffron, Bulgarian rose, and aged oud. Signature Gold is the pinnacle of our collection, designed for those who command presence and exude timeless elegance.' }}
+        </p>
+      </div>
+
+      <!-- Variant Selectors -->
+      {%- if product.has_only_default_variant == false -%}
+        <div class="space-y-6 mb-10">
+          {%- for option in product.options_with_values -%}
+            <div>
+              <label class="font-label-lg text-label-lg text-primary uppercase mb-3 block">{{ option.name }}</label>
+              <div class="flex flex-wrap gap-3">
+                {%- for value in option.values -%}
+                  <button class="px-6 py-2 border {% if option.selected_value == value %}border-[#D4AF37] bg-[#D4AF37]/5 text-[#D4AF37]{% else %}border-outline-variant text-on-surface-variant{% endif %} font-label-md text-label-md rounded hover:border-[#D4AF37] transition-all">
+                    {{ value }}
+                  </button>
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      <!-- Add to Cart -->
+      <div class="space-y-4 mb-12">
+        <div class="flex gap-4">
+          <div class="flex items-center border border-outline-variant rounded px-4 py-3">
+            <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">remove</span></button>
+            <input type="number" value="1" class="w-12 text-center border-none focus:ring-0 font-body-lg text-primary bg-transparent">
+            <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">add</span></button>
+          </div>
+          <button class="flex-1 bg-primary text-secondary-fixed font-label-lg text-label-lg uppercase py-4 rounded hover:bg-surface-container-highest transition-all flex items-center justify-center gap-3">
+            ADD TO BAG <span class="material-symbols-outlined">shopping_bag</span>
+          </button>
+        </div>
+        <button class="w-full border border-primary text-primary font-label-lg text-label-lg uppercase py-4 rounded hover:bg-primary hover:text-secondary-fixed transition-all">
+          BUY IT NOW
+        </button>
+      </div>
+
+      <!-- Accordions -->
+      <div class="border-t border-outline-variant">
+        <div class="py-4 border-b border-outline-variant group cursor-pointer">
+          <div class="flex items-center justify-between">
+            <span class="font-label-lg text-label-lg text-primary uppercase">Scent Notes</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </div>
+          <div class="mt-4 hidden group-hover:block font-body-md text-on-surface-variant">
+            Top: Saffron, Raspberry, Thyme<br>
+            Heart: Jasmine, Olibanum<br>
+            Base: Leather, Black Suede, Amber, Wood
+          </div>
+        </div>
+        <div class="py-4 border-b border-outline-variant group cursor-pointer">
+          <div class="flex items-center justify-between">
+            <span class="font-label-lg text-label-lg text-primary uppercase">Sustainability</span>
+            <span class="material-symbols-outlined">expand_more</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Main Product",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Luxe Main Product"
+    }
+  ]
+}
+{% endschema %}

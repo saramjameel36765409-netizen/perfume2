@@ -1,0 +1,493 @@
+<html class="light" lang="en"><head></head><body class="bg-background text-on-background min-h-screen font-sans">```html
+
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Aura | E-Commerce Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f3f3f4",
+                      "outline-variant": "#cfc4c5",
+                      "surface-container-high": "#e8e8e8",
+                      "on-background": "#1a1c1c",
+                      "background": "#f9f9f9",
+                      "surface-dim": "#dadada",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#768694",
+                      "primary": "#000000",
+                      "promo-pink": "#F2C4CE",
+                      "secondary-fixed": "#ffe088",
+                      "on-tertiary-fixed": "#0d1d29",
+                      "surface-tint": "#5e5e5e",
+                      "outline": "#7e7576",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#eeeeee",
+                      "surface-container-highest": "#e2e2e2",
+                      "tertiary-fixed": "#d4e4f5",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-tertiary-fixed-variant": "#394855",
+                      "tertiary-container": "#0d1d29",
+                      "on-tertiary": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "inverse-on-surface": "#f0f1f1",
+                      "on-primary-container": "#848484",
+                      "inverse-primary": "#c6c6c6",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#e2e2e2",
+                      "tertiary-fixed-dim": "#b8c8d8",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-secondary-fixed": "#241a00",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#e9c349",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4c4546",
+                      "surface-variant": "#e2e2e2",
+                      "secondary": "#735c00",
+                      "primary-container": "#1b1b1b",
+                      "surface": "#f9f9f9",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary": "#000000",
+                      "surface-off-white": "#F9F9F9",
+                      "secondary-container": "#fed65b",
+                      "on-secondary-container": "#745c00",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-sm": [
+                              "DM Sans"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-xl": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "DM Sans"
+                      ],
+                      "label-lg": [
+                              "DM Sans"
+                      ],
+                      "label-md": [
+                              "DM Sans"
+                      ],
+                      "body-lg": [
+                              "DM Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<!-- Sticky Header -->
+<header class="bg-primary border-b border-outline-variant/20 shadow-[0_0_15px_rgba(212,175,55,0.15)] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto z-50">
+<!-- Brand Logo -->
+<a class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-secondary-fixed tracking-widest uppercase" href="#">
+                LUXE AURA
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-gutter">
+<a class="font-label-lg text-label-lg text-secondary-fixed border-b-2 border-secondary-fixed pb-1 hover:text-secondary-fixed hover:opacity-80 transition-all" href="#">SHOP</a>
+<a class="font-label-lg text-label-lg text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors hover:opacity-80 transition-all" href="#">COLLECTIONS</a>
+<a class="font-label-lg text-label-lg text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors hover:opacity-80 transition-all" href="#">EDITORIAL</a>
+<a class="font-label-lg text-label-lg text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors hover:opacity-80 transition-all" href="#">ABOUT</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-4 text-secondary-fixed dark:text-secondary-fixed">
+<button class="hover:text-secondary-fixed hover:opacity-80 transition-all scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="hover:text-secondary-fixed hover:opacity-80 transition-all scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="hover:text-secondary-fixed hover:opacity-80 transition-all scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main>
+<!-- 2. Hero Section -->
+<section class="relative h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary to-[#2a1c00]">
+<!-- Hero Background Image (Scent Portrait) -->
+<div class="absolute inset-0 z-0">
+<img alt="Hero Perfume Bottle" class="w-full h-full object-cover opacity-60" data-alt="A striking, high-contrast close-up of a luxurious gold perfume bottle resting on a sleek black reflective surface. The scene is illuminated by dramatic, warm amber lighting that highlights the metallic details of the bottle and creates a glowing aura. The background is a seamless, deep gradient from black to warm dark amber, embodying a 'Bold Commercial Luxury' aesthetic. The overall mood is sensual, exclusive, and aggressively contemporary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv77uohTksYcKi4ocjBGvd5Ef7cp3tYeWNMMbdFZ7ZSgsX8hiXx_gT2Rl0wEleKeIr1OJGyiAerm31XMm3O9nWBKTD-N85_PZzvL5F0JnJMNMxdd-31-caOBCIY3ZsWO_CfZLdNpsjuZ523TqBjcd0PNzZb20m35bW2NZ3CXgrNDFYPe5S8k4gmqFV6TlwjOzLH3QQxZe0onUvuM4wmRYBGfgJNaqOaF1rY8k8zzjBlHFIn8xk50VNL8TIhICyoT1jUVlzbNrJgQ"/>
+</div>
+<!-- Glow Overlay -->
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary-fixed/20 via-primary/60 to-primary z-10"></div>
+<div class="relative z-20 text-center px-margin-mobile flex flex-col items-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-secondary-fixed italic mb-6 shadow-sm">SIGNATURE GOLD</h1>
+<p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl mb-10 mx-auto">Experience the essence of prestige. A fragrance crafted for the discerning few.</p>
+<button class="bg-[#D4AF37] text-primary font-label-lg text-label-lg uppercase px-8 py-4 rounded hover:bg-secondary-fixed-dim transition-colors duration-300">
+                    DISCOVER MORE
+                </button>
+</div>
+</section>
+<!-- 3. Signature Series Carousel (Simplified to Grid for standard output) -->
+<section class="py-[120px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-surface-lowest">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase">Signature Series</h2>
+<div class="w-16 h-1 bg-[#D4AF37] mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container-lowest rounded-lg border border-[#F4F4F4] overflow-hidden transition-all duration-300 hover:shadow-[0_24px_24px_-12px_rgba(0,0,0,0.04)] relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low p-8 flex items-center justify-center">
+<img alt="Product 1" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, minimalist glass perfume bottle with a heavy gold cap, photographed against a stark white background in a high-key studio setting. The lighting is pristine and editorial, highlighting the clarity of the glass and the richness of the amber liquid inside. The composition is structured and rhythmic, reflecting a modern e-commerce luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw"/>
+</div>
+<div class="p-6 text-center">
+<span class="inline-block bg-primary text-secondary-fixed font-body-sm text-body-sm uppercase px-2 py-1 mb-3">EXCLUSIVE</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Midnight Amber</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">$245.00</p>
+<button class="w-full py-3 border border-[#D4AF37] text-[#D4AF37] font-label-md text-label-md uppercase rounded hover:bg-[#D4AF37] hover:text-primary transition-colors duration-300">
+                            ADD TO CART
+                        </button>
+</div>
+<!-- Hover Aura Glow -->
+<div class="absolute inset-0 border border-transparent group-hover:border-[#D4AF37]/30 rounded-lg pointer-events-none transition-colors duration-300"></div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container-lowest rounded-lg border border-[#F4F4F4] overflow-hidden transition-all duration-300 hover:shadow-[0_24px_24px_-12px_rgba(0,0,0,0.04)] relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low p-8 flex items-center justify-center">
+<img alt="Product 2" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A tall, slender black opaque perfume bottle with a minimalist gold logo, styled in an editorial high-fashion context against a pure white background. The bottle reflects soft, diffused light, creating a lifted effect. The aesthetic is clean, sharp, and exudes commercial luxury and confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WsRSaMQb-U1nBW48Dqad-dGc1uzTGjLBjryViMXHQ-u1vtvYpHg-AN63TUknHCJzYOu8bt31vwmRDI5YlSkO-Jv2yOyL9kDO1bH-0fNWoBjy_i4YmmxwW4OD2nSlS3FGd0SKl7eEnQG-5Jyh-JFOWR1VKdS4MsBuIwBSgllIHh12gaXvkzYJ1F65nqdXRPCcks71so5X0lVZRyXZhHZrymUh2CkNSnLy5Q3iMisVzIV2ErD1FaXnile2VPYt4U-QmznYNjT-2g"/>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Noir Absolu</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">$280.00</p>
+<button class="w-full py-3 border border-[#D4AF37] text-[#D4AF37] font-label-md text-label-md uppercase rounded hover:bg-[#D4AF37] hover:text-primary transition-colors duration-300">
+                            ADD TO CART
+                        </button>
+</div>
+<!-- Hover Aura Glow -->
+<div class="absolute inset-0 border border-transparent group-hover:border-[#D4AF37]/30 rounded-lg pointer-events-none transition-colors duration-300"></div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container-lowest rounded-lg border border-[#F4F4F4] overflow-hidden transition-all duration-300 hover:shadow-[0_24px_24px_-12px_rgba(0,0,0,0.04)] relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low p-8 flex items-center justify-center">
+<img alt="Product 3" class="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="An elegant, faceted glass perfume bottle filled with a pale pink fragrance, featuring a sleek silver atomizer and cap. It sits on a pristine white surface, lit by bright, soft studio lighting that creates subtle ambient shadows. The overall look is breathable, luxurious, and perfectly suited for a high-end e-commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5kgJsryK6MRVJ5mrji-mvMJ5JlowLx7Uem8arksvTHF_SIu0b5MPp5zjYxXqVWCND1_XukauXXVjmPnbyVBqQk67kFNiCAFHff7AR4nFMeI5DYf_dSpIYgPL1avpO7uaeiX7GxQJKrrkTNJU2y1oniGDadZe4ER_EWu3Zktp9rv1tdBO30pdzXW-sATrUnio7SVlnNQ4GJ24vSI80mFlVOFAAD7wsib8qvDQZwAfJ8OmCHY37-hCCwXU-wgklpi4oVlXT0b9MCA"/>
+</div>
+<div class="p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Rose Satin</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">$210.00</p>
+<button class="w-full py-3 border border-[#D4AF37] text-[#D4AF37] font-label-md text-label-md uppercase rounded hover:bg-[#D4AF37] hover:text-primary transition-colors duration-300">
+                            ADD TO CART
+                        </button>
+</div>
+<!-- Hover Aura Glow -->
+<div class="absolute inset-0 border border-transparent group-hover:border-[#D4AF37]/30 rounded-lg pointer-events-none transition-colors duration-300"></div>
+</div>
+</div>
+</section>
+<!-- 5. Promotional Cutout Banner -->
+<section class="relative bg-surface-container-high overflow-hidden py-32 flex items-center justify-center min-h-[500px]">
+<!-- Large Background Text -->
+<div class="absolute inset-0 flex items-center justify-center z-0 opacity-10 pointer-events-none">
+<span class="font-display-lg text-[120px] md:text-[200px] text-primary whitespace-nowrap leading-none font-bold tracking-tighter">SIGNATURE</span>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile flex justify-center">
+<!-- Overlapping Bottle Cutouts (using layered images/divs) -->
+<div class="flex items-end justify-center -space-x-12 md:-space-x-24">
+<img alt="Bottle 1" class="w-48 md:w-72 h-auto object-cover rounded-full shadow-2xl relative z-10" data-alt="A detailed, tightly cropped shot of a luxurious crystal perfume bottle reflecting warm ambient light. The image serves as a high-contrast cutout element against a textured gray background. The lighting emphasizes the facets of the glass and the sophisticated 'Gold Glow' characteristic of a bold commercial luxury brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCguWKWjHSWf2rSfyZ8FJg96Xpi8i2XGBhcDG5hpBC8EehYPLWEIReKk0Ge32epmS-WZnIx5rdSrBPwH6Rk06g-Imx1bBqrsZn6YGXbDhFq7TW_M0-K8mlge2PpZumQ6tWgP-cnPqaRiVbBRJUnzd1k6W_M17W4NjjpfWXnZyPD6xG0349DZv_LRlHriB1MFYyY0ZFFgOhZmvwyV8jR5V9IKzlaOjUqnEC5eEh3HKT8J7li25EkR21qhmOi6rsEuw0sg_qqJSSQQ"/>
+<img alt="Bottle 2" class="w-64 md:w-96 h-auto object-cover rounded-full shadow-2xl relative z-20 -translate-y-8" data-alt="A striking central image of a premium gold perfume bottle, cropped in a circular format. The bottle is vividly lit against a deep black and amber background, creating a stark, editorial authority. This centerpiece image anchors the composition with its high-contrast and refined sensuality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO2e5jAmDcjDtg5IvxhrvKDOST0A5Xpj6eHSIz5DSz2JlhtHk83llKgILCg31wE02QAkkiZZiyDNOArLgzIt6YXV-2aBEHF9S7D30moM3NL-GHdfOUr-CZqorf4rpHC1EjipV3Q-44UK2_yk3WsTRUCaJ3y1OadrDsYwqofLZiBRVzh68KUjg3LM4-hTHEOSvBYOa7H4M7anWnOljL155peZC6GzuKr2l1xhgG-gr0ycHXnEK3QAT3ISnWmZev1JfHZoBbrmRKdQ"/>
+<img alt="Bottle 3" class="w-48 md:w-72 h-auto object-cover rounded-full shadow-2xl relative z-10" data-alt="A refined, minimalist glass perfume bottle with a golden cap, presented in a circular cutout format. The bright, high-key studio lighting contrasts beautifully with the other darker elements in the composition. The aesthetic is clean, elegant, and perfectly aligns with a high-end luxury e-commerce experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRQl8tsTi748apldWsA5bIG9McE3KLWcZIGZHsIxoIUINNlWK28b_lN4ju5n342SRcUkhAaHkjm3MuII31UcPF9WPAXudEXn8KhUJ9hzpvKd2-Xrp4X9pGnPapgVP3KeSlhe5QuQy356iIU8Eg8vXlOeimbMRl9xqKnI4ix5QzgCwjL7Eg6PksURkZ1yN42G6H_C5prZpEXf_o8uv0kg2o-f9msZvjZ8tTWYLzjLFfxoA-YPFWKpRKofQRNlVhP4RWV9vLoPnzA"/>
+</div>
+</div>
+</section>
+<!-- Section G: Perfect Duo Promotional Banner -->
+<section class="relative overflow-hidden py-24 bg-gradient-to-r from-[#C8D8E8] to-[#F2C4CE]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between relative z-10">
+<div class="md:w-1/2 text-left mb-12 md:mb-0">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase">Perfect Duo</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-md">Discover the perfect pairings for you and your loved one. Exclusive sets curated for unforgettable moments.</p>
+<button class="bg-primary text-secondary-fixed font-label-lg text-label-lg uppercase px-8 py-4 rounded hover:bg-surface-container-highest transition-colors duration-300">
+        Shop Sets
+      </button>
+</div>
+<div class="md:w-1/2 relative flex justify-center items-center">
+<!-- Two overlapping bottles -->
+<img alt="Bottle 1" class="w-48 h-auto object-cover rounded-xl shadow-xl relative z-20 transform -rotate-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAJ9sUFDzGt5sgh9g5pnNdjRLeNPe4zT_2t5ni0DzkQv9dqQc-GRYHEvjjt0jCyXU4Xh2x8Vl-tENkuaw92TXpZeefv3ez68vW2Q-nQJT7pZAo2XuDhZ5LWQKfPSWF-0o_OsuHdLiPUUudpEenWznM5nc7JV1ku3NT7OmACVuTra89K-p4E6lV3N9LZM-e6ZxMVKdg21UgSeuNfUJmJDnlYFhjGnCH9pskqOKVAqrvT_i18PhMhrioTqxIppb3bhGGimIIRkrmqQ"/>
+<img alt="Bottle 2" class="w-48 h-auto object-cover rounded-xl shadow-xl relative z-10 -ml-16 transform rotate-6 mt-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJvUqCb6bbb9LGNniwOQjoav9yQPf7jAPLThsP9OH1tfU0faHoy52DYIp5k4rh8PKA3TCNDr6GbAlwjF_2P414Qcsd1v1JElBMgiQx-VAmEpBnK8Q8_yJ2gszJZkxL0dCnenJXC0ZOg5Atp_R3R1ZOpGjZEaH6oVzPR_5gWUaoQXI8onckC_MPgek2l9VyPijoMtCsGLfx67AuoVb8dFgJc9S2tWgn5k5he2cQPSLPMSg9WcQQpYPpHuBfci7JpDrkyP56IuYwTQ"/>
+<!-- Floating petals SVGs -->
+<svg class="absolute top-0 right-10 text-[#ffffff] opacity-70 w-12 h-12 animate-pulse" fill="currentColor" viewbox="0 0 24 24"><path d="M12,2C12,2 14,8 20,8C14,8 12,14 12,14C12,14 10,8 4,8C10,8 12,2 12,2Z"></path></svg>
+<svg class="absolute bottom-10 left-0 text-[#ffffff] opacity-70 w-8 h-8 animate-pulse" fill="currentColor" viewbox="0 0 24 24"><path d="M12,2C12,2 14,8 20,8C14,8 12,14 12,14C12,14 10,8 4,8C10,8 12,2 12,2Z"></path></svg>
+</div>
+</div>
+</section>
+<!-- Section H: Shop by Collections Grid -->
+<section class="py-[120px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase">Shop by Collections</h2>
+<div class="w-16 h-1 bg-[#D4AF37] mx-auto"></div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<!-- Card 1 -->
+<a class="group relative aspect-square overflow-hidden rounded bg-surface-container-low flex items-end justify-center pb-6 hover:border-b-4 hover:border-[#D4AF37] transition-all" href="#">
+<img alt="Made for Hommes" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMS6nQZ52Ycg9ej2NHVo_ZZVyEW1b1clwr8jfIe-Dey3fam6t0_VUQ0UIxT6eCzhPL3HBUb52Tu0BqHocOG7ImZQHzYmfcFZ3xwC4bsnm3c9fHIlpV0t-EBIXftvCCz346xUNQkZvSwI5KcAzSNHc8SbKdOPp5OOBjvaT1yIM24NeCQbtIRVLpctMPicYxGr40pDD5QYcIeBBRzfLoFImOZwzJmkOzpikGlkD-P-4Jtoyx1ybkO2k-GhDHWA0MDPTTxYxXGhZnQw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<span class="relative z-10 font-headline-md text-on-primary text-center">Made for Hommes</span>
+</a>
+<!-- Card 2 -->
+<a class="group relative aspect-square overflow-hidden rounded bg-surface-container-low flex items-end justify-center pb-6 hover:border-b-4 hover:border-[#D4AF37] transition-all" href="#">
+<img alt="Made for Femmes" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1V_gT40_sU0WC6xGG9T4LqcS9Hyor0Qx39VdNW8AuRDfmtpDS3Nc-HThYNA6zatAPrvZIQhsWGlm92A3iOBjKdeLgW4U50nrEf9TR8aCw3qE3PLOCkXA9rLuoUKezGPtemWO9yRaUluII0NxqRpCnTdfBARSuI3ft5KloFwOxH3IwkNOI09wj0k_yod4QR17AT2ELRDZqjVu6u62y4wWf1X5urYknlK4NGcHWacb1STcBRSDVrpnp6FifOFdHCZzzIzYNnQ4tUw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<span class="relative z-10 font-headline-md text-on-primary text-center">Made for Femmes</span>
+</a>
+<!-- Card 3 -->
+<a class="group relative aspect-square overflow-hidden rounded bg-surface-container-low flex items-end justify-center pb-6 hover:border-b-4 hover:border-[#D4AF37] transition-all" href="#">
+<img alt="Oud Collection" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6myZd224WFBCZPMpmPmKJdnIKHZNBvUpSoKanPI8-Ef7LsSLeHHvaz60XZatIsDfGx_84PVAqB05BKukHsBmQAjWK9sjqltSWNgq5IgiA4vWxBurCh99wV7he5PTc4GTMtFBIuvLpgmTBefnVU2QuTsUFQLerIlVtFPUnjPq0R58Dw1TpAWpVxhImb-17BzZ9dukt6tSBtgySJYNkG85bNpJCsz8GB2Ek941jA9l2Omrx9r-PUANR7NR6A5LLANAxkW8IFnMYyQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<span class="relative z-10 font-headline-md text-on-primary text-center">Oud Collection</span>
+</a>
+<!-- Card 4 -->
+<a class="group relative aspect-square overflow-hidden rounded bg-surface-container-low flex items-end justify-center pb-6 hover:border-b-4 hover:border-[#D4AF37] transition-all" href="#">
+<img alt="Summer Florals" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnXTGy9AgGACrPQBCb3rmHGD8eJp-L5QzJnYaZGO8nLhmDW16FalP7tcoz8prUJuWDIeUtXTMapMSUiBi4FgPrBGVzKx1ChkuQCJNO4RPZuKubowIoDesDLSLWOZJzKfXfI3F9RBeskWjfqf1NVQBgwR3UZ6UY9-FQ9NzHe1wte9rdlVBbeShF7-XRmEroEPSAphGLnhNMkh0kARya5Lqh-QgbDuMWKpec_Hez20w9LAG4aDiVfkjhR90Upr03Iq-rxXm0gmtGpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<span class="relative z-10 font-headline-md text-on-primary text-center">Summer Florals</span>
+</a>
+<!-- Card 5 -->
+<a class="group relative aspect-square overflow-hidden rounded bg-surface-container-low flex items-end justify-center pb-6 hover:border-b-4 hover:border-[#D4AF37] transition-all" href="#">
+<img alt="Gift Sets" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8O6geAnjjzg12MKnj7rYQV0NVxgvxWHlK3bq1nNkSrEenFnznlC6Tu54Ev3Bf0_R1IJLyuYLEmRwKY8_FiIR5IRazYBE1yHs73sKvdU5aCxRsiyVlB89D0QDnxUyGj_0K8O-m3od4i16HxWSQdWS4moH1gzJ7sjJ5zrETT5DNGN3UZdZiHJvWv1z5R33RVeeLRuS2BvlsbvXga44BIO6XuQcOhDgf9WR2Y7YmrasyFsA-tHyfAz9Qy9_s77KEjxEY533RH6QAdw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<span class="relative z-10 font-headline-md text-on-primary text-center">Gift Sets</span>
+</a>
+</div>
+</section>
+<!-- 9. Brand Identity Bar -->
+<section class="bg-gradient-to-r from-primary via-[#2a1c00] to-primary py-24 text-center">
+<h2 class="font-headline-xl text-headline-xl text-secondary-fixed tracking-[0.5em] md:tracking-[1em] uppercase font-light">
+                L U X E    A U R A
+            </h2>
+</section>
+<!-- 10. Split-Screen Blocks -->
+<section class="flex flex-col md:flex-row min-h-[600px]">
+<!-- For Him -->
+<div class="flex-1 bg-primary text-surface-container-lowest flex flex-col justify-center items-center p-12 relative group overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="For Him Lifestyle" class="w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500 group-hover:scale-105" data-alt="A moody, high-contrast editorial portrait of a sophisticated man in a dark tailored suit, adjusting his cuff. The scene is shot in a dimly lit, luxurious environment with subtle warm amber lighting highlighting his features and creating a sense of 'Bold Commercial Luxury'. The overall aesthetic is masculine, exclusive, and refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOBz_dkrDDVdjJqIIusb6moczRMk-GAUamd29H6uEYYyqJSwLbsrQTwuayzjbbrZHJ-mc5KBP9TepQyq5UzuAFb314z6sN3mbB_0RJCi2Q7nKuIXggsvjhvB7fmAd4F84M-Z1XSWzWi0Wk1HIRH0HFtG3f8A40gJzrE7oHavEFvaJDptHgiZhuVaRhNWu1HvN7dPh54y_QZBBV193k56IQ8MEyPoJnbHHY7vnsGWb6G_3_ml6RlXf5EvExTtMdFwIRBJCuZcnGqA"/>
+</div>
+<div class="relative z-10 text-center">
+<h2 class="font-headline-lg text-headline-lg mb-2 uppercase tracking-widest">Enhance Your Moments</h2>
+<p class="font-body-md text-body-md mb-6 uppercase tracking-widest text-surface-container-low">FOR HIM</p>
+<a class="inline-block border-b border-surface-container-lowest pb-1 font-label-lg text-label-lg uppercase hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors" href="#">Explore Collection</a>
+</div>
+</div>
+<!-- For Her -->
+<div class="flex-1 bg-surface-container-lowest text-primary flex flex-col justify-center items-center p-12 relative group overflow-hidden border-l border-[#F4F4F4]">
+<div class="absolute inset-0 z-0">
+<img alt="For Her Lifestyle" class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105" data-alt="A bright, airy, and elegant editorial portrait of a woman in a flowing silk dress, looking away softly. The image is flooded with high-key, natural light, creating a 'breathable luxury' aesthetic with expansive whitespace. The styling is minimalist yet sensual, fitting a contemporary high-fashion print campaign." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtcyZCYTS-_Q-TrkqRHEAaw8icjgGskVNYlZAzlRG9esi8-Zr7o9QT6x_lloSW4wM9TuGmzsAdCM47Jt5vQXN72tWofJIhlBmyCy-GUBbm4K4TLmfcK-gpirp7Bmees6141MWrBieuAfem1O5XnRcE-1f-uTGIAQMgNZBseUTb1f9H1Eyyzxp2KgMznUZT-m5DgEbWp0Sc1tJVE_Kxoahol9Qjyhu3aqPM-Uy-uAk68PQ2RJflwYrgfcDBaJskmemMW1qJbngZtA"/>
+</div>
+<div class="relative z-10 text-center">
+<h2 class="font-headline-lg text-headline-lg mb-2 uppercase tracking-widest">Best Women Fragrances</h2>
+<p class="font-body-md text-body-md mb-6 uppercase tracking-widest text-on-surface-variant">FOR HER</p>
+<a class="inline-block border-b border-primary pb-1 font-label-lg text-label-lg uppercase hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors" href="#">Explore Collection</a>
+</div>
+</div>
+</section>
+<!-- Section K: Customer Reviews -->
+<section class="py-[120px] px-margin-mobile md:px-margin-desktop bg-surface-container-lowest overflow-hidden">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase">What Our Clients Say</h2>
+<div class="w-16 h-1 bg-[#D4AF37] mx-auto"></div>
+</div>
+<div class="max-w-container-max mx-auto flex flex-wrap justify-center gap-8 md:gap-12">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-6 shadow-xl border border-outline-variant/30 w-72 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+<div class="flex items-center justify-between mb-4">
+<div class="flex text-[#D4AF37]">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="verified">verified</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface-variant mb-6">"Absolutely stunning fragrance. It lasts all day and I get so many compliments."</p>
+<p class="font-label-lg text-label-lg font-bold text-primary uppercase">- Sarah J.</p>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-6 shadow-xl border border-outline-variant/30 w-72 transform rotate-3 hover:rotate-0 transition-transform duration-300 mt-8 md:mt-0">
+<div class="flex items-center justify-between mb-4">
+<div class="flex text-[#D4AF37]">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="verified">verified</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface-variant mb-6">"The packaging is as luxurious as the scent itself. A true masterpiece."</p>
+<p class="font-label-lg text-label-lg font-bold text-primary uppercase">- Michael T.</p>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-6 shadow-xl border border-outline-variant/30 w-72 transform -rotate-1 hover:rotate-0 transition-transform duration-300 mt-4 md:mt-0">
+<div class="flex items-center justify-between mb-4">
+<div class="flex text-[#D4AF37]">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span class="material-symbols-outlined" data-icon="star_half">star_half</span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="verified">verified</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface-variant mb-6">"My new signature scent. Perfect for evening wear and special occasions."</p>
+<p class="font-label-lg text-label-lg font-bold text-primary uppercase">- Emily R.</p>
+</div>
+</div>
+</section>
+<!-- 12. USP Bar -->
+<section class="bg-primary text-secondary-fixed py-12 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
+<div class="flex flex-col items-center py-4 md:py-0">
+<span class="material-symbols-outlined text-[32px] mb-4" data-icon="verified">verified</span>
+<h4 class="font-label-lg text-label-lg uppercase mb-2">100% Original</h4>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant">Authenticity guaranteed on all products.</p>
+</div>
+<div class="flex flex-col items-center py-4 md:py-0">
+<span class="material-symbols-outlined text-[32px] mb-4" data-icon="local_shipping">local_shipping</span>
+<h4 class="font-label-lg text-label-lg uppercase mb-2">Free Shipping</h4>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant">On all domestic orders over $150.</p>
+</div>
+<div class="flex flex-col items-center py-4 md:py-0">
+<span class="material-symbols-outlined text-[32px] mb-4" data-icon="lock">lock</span>
+<h4 class="font-label-lg text-label-lg uppercase mb-2">Secure Checkout</h4>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant">Encrypted payment processing.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-highest border-t border-outline-variant flat no shadows full-width bottom-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col space-y-4">
+<h2 class="font-display-lg-mobile md:font-headline-xl text-headline-xl text-secondary-fixed">LUXE AURA</h2>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant">DEFINING THE ESSENCE OF PRESTIGE.</p>
+</div>
+<!-- Links Columns (Combined for layout) -->
+<div class="col-span-1 md:col-span-2 grid grid-cols-2 gap-8">
+<div class="flex flex-col space-y-4">
+</div></div></div></footer></body></html>

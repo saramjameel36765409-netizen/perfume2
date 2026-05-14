@@ -1,0 +1,100 @@
+<section class="relative bg-surface-container-high overflow-hidden py-32 flex items-center justify-center min-h-[500px]">
+  <!-- Large Background Text -->
+  <div class="absolute inset-0 flex items-center justify-center z-0 opacity-[0.06] pointer-events-none">
+    <span class="font-display-lg text-[120px] md:text-[200px] text-primary whitespace-nowrap leading-none font-bold tracking-tighter">{{ section.settings.bg_text }}</span>
+  </div>
+  
+  <div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row items-center justify-between">
+    <div class="md:w-1/2 text-left mb-12 md:mb-0 z-20">
+      <p class="font-label-lg text-label-lg text-primary uppercase mb-4 tracking-widest">{{ section.settings.label }}</p>
+      <h2 class="font-headline-xl text-headline-xl text-primary mb-6 uppercase">{{ section.settings.heading_start }} <span class="text-[#D4AF37]">{{ section.settings.heading_end }}</span></h2>
+      <a href="{{ section.settings.button_link }}" class="bg-primary text-secondary-fixed font-label-lg text-label-lg uppercase px-8 py-4 rounded hover:bg-surface-container-highest transition-colors duration-300">
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+    
+    <!-- Overlapping Bottle Cutouts -->
+    <div class="md:w-1/2 flex items-end justify-center -space-x-12 md:-space-x-24 relative z-10">
+      {%- if section.settings.image_1 != blank -%}
+        {{ section.settings.image_1 | image_url: width: 400 | image_tag: class: 'w-48 md:w-72 h-auto object-cover rounded-full shadow-2xl relative z-10 transform -rotate-6' }}
+      {%- else -%}
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCguWKWjHSWf2rSfyZ8FJg96Xpi8i2XGBhcDG5hpBC8EehYPLWEIReKk0Ge32epmS-WZnIx5rdSrBPwH6Rk06g-Imx1bBqrsZn6YGXbDhFq7TW_M0-K8mlge2PpZumQ6tWgP-cnPqaRiVbBRJUnzd1k6W_M17W4NjjpfWXnZyPD6xG0349DZv_LRlHriB1MFYyY0ZFFgOhZmvwyV8jR5V9IKzlaOjUqnEC5eEh3HKT8J7li25EkR21qhmOi6rsEuw0sg_qqJSSQQ" class="w-48 md:w-72 h-auto object-cover rounded-full shadow-2xl relative z-10 transform -rotate-6" alt="Bottle 1">
+      {%- endif -%}
+
+      {%- if section.settings.image_2 != blank -%}
+        {{ section.settings.image_2 | image_url: width: 600 | image_tag: class: 'w-64 md:w-96 h-auto object-cover rounded-full shadow-2xl relative z-20 -translate-y-8' }}
+      {%- else -%}
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO2e5jAmDcjDtg5IvxhrvKDOST0A5Xpj6eHSIz5DSz2JlhtHk83llKgILCg31wE02QAkkiZZiyDNOArLgzIt6YXV-2aBEHF9S7D30moM3NL-GHdfOUr-CZqorf4rpHC1EjipV3Q-44UK2_yk3WsTRUCaJ3y1OadrDsYwqofLZiBRVzh68KUjg3LM4-hTHEOSvBYOa7H4M7anWnOljL155peZC6GzuKr2l1xhgG-gr0ycHXnEK3QAT3ISnWmZev1JfHZoBbrmRKdQ" class="w-64 md:w-96 h-auto object-cover rounded-full shadow-2xl relative z-20 -translate-y-8" alt="Bottle 2">
+      {%- endif -%}
+
+      {%- if section.settings.image_3 != blank -%}
+        {{ section.settings.image_3 | image_url: width: 400 | image_tag: class: 'w-48 md:w-72 h-auto object-cover rounded-full shadow-2xl relative z-10 transform rotate-6' }}
+      {%- else -%}
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRQl8tsTi748apldWsA5bIG9McE3KLWcZIGZHsIxoIUINNlWK28b_lN4ju5n342SRcUkhAaHkjm3MuII31UcPF9WPAXudEXn8KhUJ9hzpvKd2-Xrp4X9pGnPapgVP3KeSlhe5QuQy356iIU8Eg8vXlOeimbMRl9xqKnI4ix5QzgCwjL7Eg6PksURkZ1yN42G6H_C5prZpEXf_o8uv0kg2o-f9msZvjZ8tTWYLzjLFfxoA-YPFWKpRKofQRNlVhP4RWV9vLoPnzA" class="w-48 md:w-72 h-auto object-cover rounded-full shadow-2xl relative z-10 transform rotate-6" alt="Bottle 3">
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Promo Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "bg_text",
+      "label": "Background Text",
+      "default": "SIGNATURE SERIES"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Small Label",
+      "default": "Exclusive Drop"
+    },
+    {
+      "type": "text",
+      "id": "heading_start",
+      "label": "Heading Start",
+      "default": "Signature"
+    },
+    {
+      "type": "text",
+      "id": "heading_end",
+      "label": "Heading End (Gold)",
+      "default": "Series"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop the Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Left Bottle"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Center Bottle"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Right Bottle"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxe Promo Banner"
+    }
+  ]
+}
+{% endschema %}

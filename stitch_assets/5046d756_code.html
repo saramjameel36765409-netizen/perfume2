@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luxe Aura - Signature Gold</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#848484",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#735c00",
+                      "surface-container": "#eeeeee",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-primary": "#ffffff",
+                      "tertiary-container": "#0d1d29",
+                      "on-primary-fixed": "#1b1b1b",
+                      "tertiary-fixed": "#d4e4f5",
+                      "secondary-container": "#fed65b",
+                      "background": "#f9f9f9",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary-container": "#768694",
+                      "tertiary": "#000000",
+                      "on-error": "#ffffff",
+                      "surface": "#f9f9f9",
+                      "primary": "#000000",
+                      "primary-fixed": "#e2e2e2",
+                      "inverse-primary": "#c6c6c6",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e8e8e8",
+                      "surface-variant": "#e2e2e2",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-background": "#1a1c1c",
+                      "surface-off-white": "#F9F9F9",
+                      "on-secondary-fixed": "#241a00",
+                      "inverse-on-surface": "#f0f1f1",
+                      "primary-container": "#1b1b1b",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-surface": "#1a1c1c",
+                      "tertiary-fixed-dim": "#b8c8d8",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed-dim": "#e9c349",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#cfc4c5",
+                      "promo-pink": "#F2C4CE",
+                      "on-tertiary-fixed-variant": "#394855",
+                      "surface-dim": "#dadada",
+                      "surface-bright": "#f9f9f9",
+                      "on-surface-variant": "#4c4546",
+                      "on-secondary-container": "#745c00",
+                      "outline": "#7e7576",
+                      "secondary-fixed": "#ffe088",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f3f3f4",
+                      "on-tertiary-fixed": "#0d1d29",
+                      "surface-tint": "#5e5e5e",
+                      "inverse-surface": "#2f3131"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "DM Sans"
+                      ],
+                      "body-md": [
+                              "DM Sans"
+                      ],
+                      "headline-xl": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-lg": [
+                              "DM Sans"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "DM Sans"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-sm": [
+                              "DM Sans"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<header class="bg-primary dark:bg-primary fixed top-0 w-full z-50 border-b border-on-primary-fixed-variant shadow-[0_4px_24px_rgba(212,175,55,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<!-- Mobile Menu Icon (Placeholder for functionality) -->
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Brand Logo -->
+<a class="font-display-lg text-display-lg-mobile md:text-display-lg text-secondary tracking-widest uppercase" href="#">
+                Luxe Aura
+            </a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-lg text-label-lg text-secondary border-b-2 border-secondary pb-1 hover:text-secondary-fixed-dim transition-all duration-300" href="#">Fragrances</a>
+<a class="font-label-lg text-label-lg text-on-primary hover:text-secondary-fixed transition-colors duration-300 hover:text-secondary-fixed-dim" href="#">Collections</a>
+<a class="font-label-lg text-label-lg text-on-primary hover:text-secondary-fixed transition-colors duration-300 hover:text-secondary-fixed-dim" href="#">Our Story</a>
+<a class="font-label-lg text-label-lg text-on-primary hover:text-secondary-fixed transition-colors duration-300 hover:text-secondary-fixed-dim" href="#">Boutiques</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-unit text-secondary dark:text-secondary-fixed-dim">
+<button class="p-2 scale-95 duration-200 active:opacity-80 hover:text-secondary-fixed-dim transition-all duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="p-2 scale-95 duration-200 active:opacity-80 hover:text-secondary-fixed-dim transition-all duration-300 hidden md:block">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32">
+<!-- Section 1: Split Screen PDP -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-margin-desktop pt-16 pb-32 items-center">
+<!-- Left: Hero Image -->
+<div class="relative w-full h-[600px] md:h-[800px] bg-surface-container-lowest rounded-lg overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.04)]">
+<img alt="Signature Gold Perfume Bottle" class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]" data-alt="A striking, high-end commercial product photography shot of a luxurious golden perfume bottle resting on a sleek marble plinth. The lighting is dramatic and moody, featuring warm amber volumetric light rays piercing through a dark, minimalist background to highlight the metallic accents of the bottle. The overall aesthetic is strictly 'Bold Commercial Luxury', utilizing a stark contrast between deep blacks and gleaming secondary gold (#D4AF37) tones to evoke exclusivity and prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf0ugKwWfyQjbuMv9JQJO3DlqsPdn-gx-VbdtUZbSbqRHZ8g_bUFEl01yyhpygzSmk_Xpctphk4L3rBpv8FxX6zNbRbyr-UD_bmR0CrYIxryDqJ3teLh9K8jrJHGArO4BCR3OlpDR8eDQiekJpTjwjXI9iJxoFnthRcP9_lHDy8CLn5UxmpzkXM1VkWJbjYbxzWGwUjpjG0EQAx3Bm_6mpKGArPti3XY2QAE-fbEMNjDaJKCnuJkc9Z9Nbzb-cMvjk_r9MK56_Ww"/>
+<!-- Ambient Gold Glow Overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-secondary/10 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<!-- Right: Product Details -->
+<div class="flex flex-col justify-center py-8">
+<p class="font-label-lg text-label-lg text-on-surface-variant tracking-[0.2em] uppercase mb-4">SIGNATURE SERIES</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary italic mb-6">Signature Gold</h1>
+<p class="font-headline-md text-headline-md text-primary font-medium mb-10">PKR 12,500</p>
+<!-- Scent Profile -->
+<div class="mb-10 pb-10 border-b border-surface-variant">
+<h3 class="font-label-lg text-label-lg text-primary uppercase mb-6 tracking-widest">Scent Profile</h3>
+<div class="grid grid-cols-3 gap-4">
+<div class="flex flex-col items-center p-4 bg-surface-bright rounded-DEFAULT border border-surface-variant">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Top</span>
+<span class="font-body-md text-body-md text-primary font-medium">Saffron</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-bright rounded-DEFAULT border border-surface-variant">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Heart</span>
+<span class="font-body-md text-body-md text-primary font-medium">Oud</span>
+</div>
+<div class="flex flex-col items-center p-4 bg-surface-bright rounded-DEFAULT border border-surface-variant">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase mb-2">Base</span>
+<span class="font-body-md text-body-md text-primary font-medium">Amber</span>
+</div>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="mb-10">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-label-lg text-label-lg text-primary uppercase tracking-widest">Size</h3>
+<button class="font-label-md text-label-md text-secondary underline hover:opacity-80">Size Guide</button>
+</div>
+<div class="flex gap-4">
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="size" type="radio"/>
+<div class="px-8 py-3 bg-surface-bright border border-primary text-primary font-label-lg text-label-lg uppercase rounded-full peer-checked:bg-primary peer-checked:text-on-primary transition-all duration-300">
+                                50ml
+                            </div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="size" type="radio"/>
+<div class="px-8 py-3 bg-surface-bright border border-surface-variant text-on-surface-variant font-label-lg text-label-lg uppercase rounded-full peer-checked:bg-primary peer-checked:text-on-primary transition-all duration-300 hover:border-primary">
+                                100ml
+                            </div>
+</label>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary text-secondary font-label-lg text-label-lg uppercase tracking-widest py-5 rounded-DEFAULT hover:bg-on-primary-fixed hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-300 flex justify-center items-center gap-2">
+                    Add to Bag
+                    <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+<!-- Trust Markers -->
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined font-light">local_shipping</span>
+<span class="font-label-md text-label-md">Complimentary Shipping</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined font-light">redeem</span>
+<span class="font-label-md text-label-md">Signature Packaging</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Sensory Experience -->
+<section class="py-32 relative overflow-hidden bg-surface-bright border-y border-surface-variant my-16 rounded-xl">
+<!-- Decorative Elements -->
+<div class="absolute top-10 left-10 opacity-10 text-secondary rotate-12">
+<svg fill="currentColor" height="60" viewbox="0 0 24 24" width="60" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C12 2 15 8 20 10C20 10 14 12 12 22C12 22 10 12 4 10C4 10 9 8 12 2Z"></path>
+</svg>
+</div>
+<div class="absolute bottom-10 right-20 opacity-10 text-secondary -rotate-45">
+<svg fill="currentColor" height="80" viewbox="0 0 24 24" width="80" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C12 2 15 8 20 10C20 10 14 12 12 22C12 22 10 12 4 10C4 10 9 8 12 2Z"></path>
+</svg>
+</div>
+<div class="max-w-2xl mx-auto text-center relative z-10 px-margin-mobile">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-8 italic">The Sensory Experience</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    An opulent symphony of rare spices and deep woods. Signature Gold opens with the fiery intensity of saffron, melting into a heart of liquid oud. The dry down is a lingering embrace of warm amber, leaving a trail of undeniable prestige and sensual mystery.
+                </p>
+</div>
+</section>
+<!-- Section 3: Complete the Ritual (Carousel) -->
+<section class="py-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase tracking-wider mb-2">Complete the Ritual</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Enhance the longevity of your signature scent.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center hover:border-primary transition-colors text-primary">
+<span class="material-symbols-outlined">arrow_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-surface-variant flex items-center justify-center hover:border-primary transition-colors text-primary">
+<span class="material-symbols-outlined">arrow_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="relative h-[400px] bg-surface-container-lowest rounded-lg overflow-hidden mb-6 border border-surface-variant group-hover:shadow-[0_24px_48px_rgba(212,175,55,0.04)] transition-all duration-500">
+<img alt="Body Lotion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist, high-key photograph of a sleek, cylindrical black body lotion bottle from a luxury cosmetic brand. The bottle is positioned centrally against a stark white background. Soft, diffused lighting creates gentle highlights on the matte black surface, adhering to the 'Bold Commercial Luxury' light-mode aesthetic. A subtle drop shadow anchors the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEoNZO9wdfYodBKOKgaaz2aidLWN1SIfhQB0dUesH7KO0SLzh54077U-Bv5XHUgc4ZTomcb2CQPnHGU7kRIVTAcAFPG9vjIAm-bPUESWl4IpgPBwIXM5V15sxj5u0O4NWgDoSQXtpyuXDl2YtcgQWJouiQGqiO0x6-9D9-ifIJy1CH1Dj6VlhXCzfJh1dFVRpEl5DBxvJmHH482YjV4Qt1JqXw4CjABRl4y2uIZ99MJMOYhp1hN7jYVVVnb-KHpyNdHynWHY7O6w"/>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Velvet Body Lotion</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">Oud &amp; Amber</p>
+<p class="font-body-md text-body-md text-on-surface-variant">PKR 4,500</p>
+</div>
+<!-- Product 2 -->
+<div class="group cursor-pointer">
+<div class="relative h-[400px] bg-surface-container-lowest rounded-lg overflow-hidden mb-6 border border-surface-variant group-hover:shadow-[0_24px_48px_rgba(212,175,55,0.04)] transition-all duration-500">
+<img alt="Travel Spray" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An elegant, slender glass travel spray vial filled with amber liquid, resting on a white marble surface. The lighting is bright and airy, casting soft, elongated shadows that emphasize the product's premium quality. The overall composition is clean, modern, and perfectly aligned with a high-end luxury e-commerce light-mode design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8dDhUwBsoZ9JOgzyBkdnMEfRtbDk9UZca4jRNlAvfEUy4DjYKR74For_hGmZn7ejpobF2mwkynIEYJT1DFY0yv7oXVTwhK9AelM1sRcJX9esfx-QR8TEh6ytdwqVikj3m8F_I_jUzuJja4u3tyk68ykX3Pi6jVhQq7_dxVrrVR6DBFgkiU-p2YE5MBJ-PlgIZa1Sxo_dR_TJWQV3X5n5NGwh2bjB03aCx8sa5ExaHILWhSK2CY0cEQRwmOkLWRJgOi95pTfjVCQ"/>
+<div class="absolute top-4 left-4 bg-primary text-secondary px-3 py-1 font-label-md text-label-md uppercase rounded-sm">Exclusive</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Travel Atomizer</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">Signature Gold</p>
+<p class="font-body-md text-body-md text-on-surface-variant">PKR 3,200</p>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer hidden md:block">
+<div class="relative h-[400px] bg-surface-container-lowest rounded-lg overflow-hidden mb-6 border border-surface-variant group-hover:shadow-[0_24px_48px_rgba(212,175,55,0.04)] transition-all duration-500">
+<img alt="Body Scrub" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious, thick-glass jar of body scrub with a brushed gold lid, sitting on a pristine white pedestal. The image is brightly lit with high contrast, showcasing the rich texture of the product inside. The setting is minimal, focusing entirely on the premium packaging and the interplay of white and secondary gold (#D4AF37) accents, fitting a bold luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD550LrGfEKi3AwucLpTwK6WU35mBkpmlUlfR5F30hmLTOaEjg8OLrA2bVGijjKiFtGWE5ZFmY7akQ8AMKg89VXibLArSY7DOzCHDY-wheC3F5kyW5Zi-C-NsX8fuH-N763kSEgHa__UvKrbgBgfTRVWlzMERnvS6OLnuX_PH_ijRoQLevco1H7ER2eKi8931U8m0cRyzTbE9uoC3Vuad-wm7dh8qLh08Ss-WhJdO93vYNJ0Xo8_ZIvAyh1s5TRmZUdlJYvSXyDw"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Illuminating Scrub</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">Saffron Infused</p>
+<p class="font-body-md text-body-md text-on-surface-variant">PKR 6,800</p>
+</div>
+</div>
+</section>
+<!-- Section 4: Reviews -->
+<section class="py-24 border-t border-surface-variant">
+<div class="flex flex-col items-center text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase tracking-wider mb-6">Client Impressions</h2>
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined fill text-[24px]">star</span>
+<span class="material-symbols-outlined fill text-[24px]">star</span>
+<span class="material-symbols-outlined fill text-[24px]">star</span>
+<span class="material-symbols-outlined fill text-[24px]">star</span>
+<span class="material-symbols-outlined fill text-[24px]">star_half</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Based on 142 reviews</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-4xl mx-auto">
+<div class="p-8 bg-surface-bright rounded-lg border border-surface-variant">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4 text-lg">Absolutely Intoxicating</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 italic">"The projection on this is unreal. I wore it to a gala and received compliments all night. The saffron note is sharp at first but settles beautifully into the amber base."</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">— S. Karim</p>
+</div>
+<div class="p-8 bg-surface-bright rounded-lg border border-surface-variant">
+<div class="flex gap-1 text-secondary mb-4">
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined fill text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-primary mb-4 text-lg">A True Statement</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 italic">"This is not for the faint of heart. It's bold, rich, and deeply luxurious. Only docked a star because it might be too heavy for daytime wear in the summer."</p>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">— A. Malik</p>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="font-label-lg text-label-lg text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors duration-300">Read All Reviews</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary w-full py-margin-desktop border-t border-on-primary-fixed-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-lg text-headline-lg text-secondary mb-8 block">Luxe Aura</span>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Shipping &amp; Returns</a>
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Contact Us</a>
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Ingredient Transparency</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Store Locator</a>
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Scent Discovery</a>
+<a class="font-label-md text-label-md text-on-primary-container hover:text-secondary transition-colors duration-300 opacity-90 hover:opacity-100 uppercase" href="#">Affiliates</a>
+</div>
+</div>
+<div class="mt-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-on-primary-fixed-variant pt-8">
+<p class="font-body-sm text-body-sm text-on-primary-container text-center md:text-left">
+                © 2024 Luxe Aura. All Rights Reserved.
+            </p>
+</div>
+</footer>
+</body></html>

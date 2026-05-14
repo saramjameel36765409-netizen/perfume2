@@ -32,6 +32,101 @@
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-schemes' -%}
 
+    <!-- Stitch Integration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f3f3f4",
+                      "outline-variant": "#cfc4c5",
+                      "surface-container-high": "#e8e8e8",
+                      "on-background": "#1a1c1c",
+                      "background": "#f9f9f9",
+                      "surface-dim": "#dadada",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#768694",
+                      "primary": "#000000",
+                      "promo-pink": "#F2C4CE",
+                      "secondary-fixed": "#ffe088",
+                      "on-tertiary-fixed": "#0d1d29",
+                      "surface-tint": "#5e5e5e",
+                      "outline": "#7e7576",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#eeeeee",
+                      "surface-container-highest": "#e2e2e2",
+                      "tertiary-fixed": "#d4e4f5",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-tertiary-fixed-variant": "#394855",
+                      "tertiary-container": "#0d1d29",
+                      "on-tertiary": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "inverse-on-surface": "#f0f1f1",
+                      "on-primary-container": "#848484",
+                      "inverse-primary": "#c6c6c6",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#e2e2e2",
+                      "tertiary-fixed-dim": "#b8c8d8",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-secondary-fixed": "#241a00",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed-dim": "#e9c349",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4c4546",
+                      "surface-variant": "#e2e2e2",
+                      "secondary": "#735c00",
+                      "primary-container": "#1b1b1b",
+                      "surface": "#f9f9f9",
+                      "surface-bright": "#f9f9f9",
+                      "tertiary": "#000000",
+                      "surface-off-white": "#F9F9F9",
+                      "secondary-container": "#fed65b",
+                      "on-secondary-container": "#745c00",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1a1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "body-sm": ["DM Sans"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "headline-xl": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "body-md": ["DM Sans"],
+                      "label-lg": ["DM Sans"],
+                      "label-md": ["DM Sans"],
+                      "body-lg": ["DM Sans"]
+              }
+            }
+          }
+        }
+    </script>
+
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
     {% endif %}

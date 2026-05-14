@@ -1,0 +1,96 @@
+<section class="bg-background py-32 px-margin-mobile md:px-margin-desktop min-h-screen">
+  <div class="max-w-container-max mx-auto">
+    <div class="flex items-center justify-between mb-16 border-b border-outline-variant pb-8">
+      <h1 class="font-headline-xl text-headline-xl text-primary uppercase">YOUR BAG <span class="text-on-surface-variant text-body-lg font-normal ml-4">({{ cart.item_count }} ITEMS)</span></h1>
+      <a href="/collections/all" class="font-label-lg text-label-lg text-[#D4AF37] uppercase tracking-widest hover:text-primary transition-colors">CONTINUE SHOPPING</a>
+    </div>
+
+    {%- if cart.item_count > 0 -%}
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <!-- Cart Items -->
+        <div class="lg:col-span-2 space-y-8">
+          {%- for item in cart.items -%}
+            <div class="flex gap-8 group">
+              <div class="w-32 md:w-48 aspect-square bg-surface-container-low rounded overflow-hidden p-4">
+                {{ item.image | image_url: width: 400 | image_tag: class: 'w-full h-full object-contain' }}
+              </div>
+              <div class="flex-1 flex flex-col justify-between py-2">
+                <div class="flex justify-between items-start">
+                  <div>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-1">{{ item.product.title }}</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant uppercase tracking-widest">{{ item.variant.title }}</p>
+                  </div>
+                  <p class="font-headline-md text-headline-md text-primary">{{ item.final_line_price | money }}</p>
+                </div>
+                
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center border border-outline-variant rounded px-3 py-2">
+                    <a href="/cart/change?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[18px]">remove</span></a>
+                    <span class="w-10 text-center font-body-lg text-primary">{{ item.quantity }}</span>
+                    <a href="/cart/change?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[18px]">add</span></a>
+                  </div>
+                  <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="text-on-surface-variant hover:text-error transition-colors flex items-center gap-2 font-label-md text-label-md uppercase tracking-widest">
+                    <span class="material-symbols-outlined text-[20px]">delete</span> REMOVE
+                  </a>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <!-- Summary -->
+        <div class="lg:col-span-1">
+          <div class="bg-surface-container-low rounded-lg p-8 sticky top-32">
+            <h2 class="font-label-lg text-label-lg text-primary uppercase mb-8 tracking-widest">ORDER SUMMARY</h2>
+            <div class="space-y-6 mb-8 border-b border-outline-variant pb-8">
+              <div class="flex justify-between font-body-lg text-body-lg text-on-surface-variant">
+                <span>SUBTOTAL</span>
+                <span class="text-primary font-bold">{{ cart.total_price | money }}</span>
+              </div>
+              <div class="flex justify-between font-body-lg text-body-lg text-on-surface-variant">
+                <span>SHIPPING</span>
+                <span class="text-primary">FREE</span>
+              </div>
+              <div class="flex justify-between font-body-lg text-body-lg text-on-surface-variant">
+                <span>TAXES</span>
+                <span class="text-primary">CALCULATED AT CHECKOUT</span>
+              </div>
+            </div>
+            <div class="flex justify-between font-headline-md text-headline-md text-primary mb-10">
+              <span>TOTAL</span>
+              <span>{{ cart.total_price | money }}</span>
+            </div>
+            
+            <form action="/cart" method="post" novalidate>
+              <button type="submit" name="checkout" class="w-full bg-primary text-secondary-fixed font-label-lg text-label-lg uppercase py-5 rounded hover:bg-surface-container-highest transition-all mb-4">
+                PROCEED TO CHECKOUT
+              </button>
+            </form>
+            <p class="text-center font-body-sm text-body-sm text-on-surface-variant uppercase tracking-tighter">SECURE CHECKOUT GUARANTEED</p>
+          </div>
+        </div>
+      </div>
+    {%- else -%}
+      <div class="text-center py-32 bg-surface-container-low rounded-lg">
+        <span class="material-symbols-outlined text-[64px] text-on-surface-variant mb-6">shopping_bag</span>
+        <h2 class="font-headline-xl text-headline-xl text-primary mb-4 uppercase">YOUR BAG IS EMPTY</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Discover our curated selection of prestige fragrances.</p>
+        <a href="/collections/all" class="bg-primary text-secondary-fixed font-label-lg text-label-lg uppercase px-12 py-5 rounded hover:bg-surface-container-highest transition-all">
+          EXPLORE COLLECTIONS
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Cart",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Luxe Cart"
+    }
+  ]
+}
+{% endschema %}

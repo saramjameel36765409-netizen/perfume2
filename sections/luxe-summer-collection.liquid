@@ -1,0 +1,102 @@
+<section class="py-[120px] px-margin-mobile md:px-margin-desktop bg-surface-lowest">
+  <div class="max-w-container-max mx-auto">
+    <div class="flex items-center justify-between mb-16">
+      <div>
+        <h2 class="font-headline-xl text-headline-xl text-primary mb-2 uppercase">{{ section.settings.title }}</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant italic">{{ section.settings.subtitle }}</p>
+      </div>
+      <a href="{{ section.settings.view_all_link }}" class="font-label-lg text-label-lg text-primary border-b border-primary pb-1 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-all">
+        VIEW ALL COLLECTION
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      {%- for block in section.blocks -%}
+        {%- assign collection = block.settings.collection -%}
+        <div class="group relative overflow-hidden rounded-lg">
+          <div class="aspect-[4/5] bg-surface-container overflow-hidden">
+            {%- if collection.image != blank -%}
+              {{ collection.image | image_url: width: 800 | image_tag: class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' }}
+            {%- elsif block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag: class: 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' }}
+            {%- else -%}
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQubJzN4mKx1H3Gq1Lrs1QEXLQF7z1U2w-TWOHWZQlq9Q8SwYyuYycqLoBcsbyedONYiWJpZ8NUxp1ePEJvk3cG9Gk9lcFoY6lveEVhxhFn4cFf_WRJ5ad2mCM9Maa0-wnK-Bgbgszu9zQw7bfdwtiHJW256z0JRgyoRgMB2UR_FFNhIPpjegT0hdE6n5zGtNP_JxA1xvTh1YiWQi4KijgbvLQMZTlDJAl5Pu_AYUB0APliojgMLwsSzDoXI36VseKinxqZ_dTGw" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Collection">
+            {%- endif -%}
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8">
+            <h3 class="font-headline-lg text-headline-lg text-secondary-fixed mb-2 uppercase italic">
+              {%- if collection != blank -%}{{ collection.title }}{%- else -%}{{ block.settings.title }}{%- endif -%}
+            </h3>
+            <p class="font-body-md text-body-md text-surface-container-low mb-6 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+               {%- if collection != blank -%}{{ collection.description | strip_html | truncate: 60 }}{%- else -%}Luxe Fragrances for the Elite.{%- endif -%}
+            </p>
+            <a href="{{ collection.url | default: '#' }}" class="inline-flex items-center gap-2 text-secondary-fixed font-label-md text-label-md uppercase tracking-widest hover:gap-4 transition-all">
+              DISCOVER <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Luxe Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Summer Collection"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Breathe in the spirit of the season."
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Override Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Override Title",
+          "default": "Luxe Series"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxe Collections",
+      "blocks": [
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
+      ]
+    }
+  ]
+}
+{% endschema %}
