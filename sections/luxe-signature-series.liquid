@@ -53,6 +53,12 @@
       </div>
     {%- endfor -%}
   </div>
+  <div class="mt-20 text-center">
+    <a href="{{ section.settings.collection.url | default: '/collections/all' }}" class="inline-flex items-center gap-4 text-primary font-body text-label-lg uppercase tracking-[0.3em] group hover:text-[#D4AF37] transition-colors">
+      <span>VIEW ALL FRAGRANCES</span>
+      <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+    </a>
+  </div>
 </section>
 
 {% schema %}
@@ -64,6 +70,11 @@
       "id": "title",
       "label": "Section Title",
       "default": "Signature Series"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "View All Collection"
     }
   ],
   "blocks": [

@@ -25,13 +25,13 @@
 
     <!-- Icons -->
     <div class="flex items-center gap-2 md:gap-6 text-secondary-fixed">
-      <button class="p-2 hover:scale-110 transition-transform">
+      <button class="p-2 hover:scale-110 transition-transform" aria-label="Search">
         <span class="material-symbols-outlined">search</span>
       </button>
-      <a href="/account" class="hidden md:block p-2 hover:scale-110 transition-transform">
+      <a href="/account" class="hidden md:block p-2 hover:scale-110 transition-transform" aria-label="Account">
         <span class="material-symbols-outlined">person</span>
       </a>
-      <a href="/cart" class="relative p-2 hover:scale-110 transition-transform">
+      <a href="/cart" class="relative p-2 hover:scale-110 transition-transform" aria-label="Shopping Bag">
         <span class="material-symbols-outlined">shopping_bag</span>
         {%- if cart.item_count > 0 -%}
           <span class="absolute top-1 right-1 bg-[#D4AF37] text-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
