@@ -6,9 +6,9 @@
     <div class="space-y-6">
       <div class="aspect-square bg-white rounded-sm overflow-hidden flex items-center justify-center p-6 md:p-16 border border-surface-container">
         {%- if product.featured_image != blank -%}
-          {{ product.featured_image | image_url: width: 1200 | image_tag: class: 'w-full h-full object-contain hover:scale-105 transition-transform duration-1000' }}
+          {{ product.featured_image | image_url: width: 1200 | image_tag: class: 'w-full h-full object-contain hover:scale-105 transition-transform duration-1000', alt: product.title }}
         {%- else -%}
-          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRQl8tsTi748apldWsA5bIG9McE3KLWcZIGZHsIxoIUINNlWK28b_lN4ju5n342SRcUkhAaHkjm3MuII31UcPF9WPAXudEXn8KhUJ9hzpvKd2-Xrp4X9pGnPapgVP3KeSlhe5QuQy356iIU8Eg8vXlOeimbMRl9xqKnI4ix5QzgCwjL7Eg6PksURkZ1yN42G6H_C5prZpEXf_o8uv0kg2o-f9msZvjZ8tTWYLzjLFfxoA-YPFWKpRKofQRNlVhP4RWV9vLoPnzA" class="w-full h-full object-contain" alt="Signature Gold">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRQl8tsTi748apldWsA5bIG9McE3KLWcZIGZHsIxoIUINNlWK28b_lN4ju5n342SRcUkhAaHkjm3MuII31UcPF9WPAXudEXn8KhUJ9hzpvKd2-Xrp4X9pGnPapgVP3KeSlhe5QuQy356iIU8Eg8vXlOeimbMRl9xqKnI4ix5QzgCwjL7Eg6PksURkZ1yN42G6H_C5prZpEXf_o8uv0kg2o-f9msZvjZ8tTWYLzjLFfxoA-YPFWKpRKofQRNlVhP4RWV9vLoPnzA" class="w-full h-full object-contain" alt="{{ product.title | default: 'Luxe Aura Fragrance' }}">
         {%- endif -%}
       </div>
       
@@ -16,7 +16,7 @@
       <div class="grid grid-cols-4 gap-4">
         {%- for image in product.images limit: 4 -%}
           <div class="aspect-square bg-white rounded-sm overflow-hidden cursor-pointer border {% if forloop.first %}border-[#D4AF37]{% else %}border-surface-container{% endif %}">
-            {{ image | image_url: width: 400 | image_tag: class: 'w-full h-full object-cover hover:opacity-80 transition-opacity' }}
+            {{ image | image_url: width: 400 | image_tag: class: 'w-full h-full object-cover hover:opacity-80 transition-opacity', alt: product.title }}
           </div>
         {%- endfor -%}
       </div>
