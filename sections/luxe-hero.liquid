@@ -2,14 +2,14 @@
   .luxe-hero-{{ section.id }} {
     min-height: {{ section.settings.min_height_mobile }}px;
   }
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .luxe-hero-{{ section.id }} {
       min-height: {{ section.settings.min_height_desktop }}px;
     }
   }
 {%- endstyle -%}
 
-<section class="luxe-hero-{{ section.id }} relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-primary to-[#2a1c00]">
+<section class="luxe-hero-{{ section.id }} relative flex items-center justify-center overflow-hidden bg-primary">
   <!-- Hero Background Image -->
   <div class="absolute inset-0 z-0">
     {%- if section.settings.image != blank -%}
@@ -20,16 +20,17 @@
   </div>
 
   <!-- Glow Overlay -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary-fixed/20 via-primary/60 to-primary z-10"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/40 to-primary z-10"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary-fixed/10 via-transparent to-transparent z-11"></div>
 
-  <div class="relative z-20 text-center px-margin-mobile flex flex-col items-center">
-    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-secondary-fixed italic mb-6 shadow-sm">
+  <div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop flex flex-col items-center">
+    <h1 class="font-display text-display-lg-mobile md:text-display-lg text-secondary-fixed italic mb-6 leading-tight">
       {{ section.settings.heading }}
     </h1>
-    <p class="font-body-lg text-body-lg text-surface-container-low max-w-2xl mb-10 mx-auto">
+    <p class="font-body text-body-md md:text-body-lg text-surface-container-low max-w-2xl mb-10 mx-auto opacity-90">
       {{ section.settings.subtext }}
     </p>
-    <a href="{{ section.settings.button_link }}" class="bg-[#D4AF37] text-primary font-label-lg text-label-lg uppercase px-8 py-4 rounded hover:bg-secondary-fixed-dim transition-colors duration-300">
+    <a href="{{ section.settings.button_link }}" class="bg-[#D4AF37] text-primary font-body text-label-lg uppercase px-10 py-5 rounded-sm hover:bg-[#ffe088] transition-all duration-500 hover:scale-105 tracking-[0.2em]">
       {{ section.settings.button_label }}
     </a>
   </div>

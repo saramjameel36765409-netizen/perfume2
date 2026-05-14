@@ -1,67 +1,66 @@
 <footer class="bg-primary text-surface-container-low pt-24 pb-12 px-margin-mobile md:px-margin-desktop">
   <div class="max-w-container-max mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-12 mb-24">
       <!-- Brand -->
       <div class="md:col-span-1">
-        <a href="/" class="flex flex-col mb-6">
-          <span class="font-display-lg text-[28px] text-secondary-fixed italic leading-none">LUXE AURA</span>
-          <span class="font-body-sm text-[10px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">PARIS</span>
+        <a href="/" class="flex flex-col mb-8">
+          <span class="font-display text-[28px] text-secondary-fixed italic leading-none tracking-tight">LUXE AURA</span>
+          <span class="font-body text-[10px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">PARIS</span>
         </a>
-        <p class="font-body-md text-body-md text-surface-container-low/60 mb-8 max-w-xs">
+        <p class="font-body text-body-md text-surface-container-low/60 mb-10 max-w-xs leading-relaxed">
           {{ section.settings.description | default: 'Crafting prestige fragrances since 1924. Experience the art of scent.' }}
         </p>
-        <div class="flex gap-4">
-          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-full flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all">
-            <i class="fab fa-instagram"></i>
+        <div class="flex gap-6">
+          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-sm flex items-center justify-center hover:border-secondary-fixed hover:text-secondary-fixed transition-all group">
+            <span class="material-symbols-outlined text-[18px]">share</span>
           </a>
-          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-full flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-full flex items-center justify-center hover:bg-secondary-fixed hover:text-primary transition-all">
-            <i class="fab fa-pinterest-p"></i>
+          <a href="#" class="w-10 h-10 border border-surface-container-low/20 rounded-sm flex items-center justify-center hover:border-secondary-fixed hover:text-secondary-fixed transition-all group">
+            <span class="material-symbols-outlined text-[18px]">mail</span>
           </a>
         </div>
       </div>
 
       <!-- Links -->
-      <div>
-        <h5 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-8 tracking-widest">SHOP</h5>
-        <ul class="space-y-4 font-body-md text-body-md text-surface-container-low/60">
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Fragrances</a></li>
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Collections</a></li>
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Gift Sets</a></li>
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">New Arrivals</a></li>
-        </ul>
-      </div>
+      <div class="grid grid-cols-2 md:grid-cols-2 md:col-span-2 gap-8">
+        <div>
+          <h5 class="font-body text-label-md text-secondary-fixed uppercase mb-8 tracking-[0.2em]">SHOP</h5>
+          <ul class="space-y-4 font-body text-body-sm text-surface-container-low/60">
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Fragrances</a></li>
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Collections</a></li>
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Gift Sets</a></li>
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">New Arrivals</a></li>
+          </ul>
+        </div>
 
-      <div>
-        <h5 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-8 tracking-widest">SUPPORT</h5>
-        <ul class="space-y-4 font-body-md text-body-md text-surface-container-low/60">
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Contact Us</a></li>
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Shipping & Returns</a></li>
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">FAQ</a></li>
-          <li><a href="#" class="hover:text-secondary-fixed transition-colors">Privacy Policy</a></li>
-        </ul>
+        <div>
+          <h5 class="font-body text-label-md text-secondary-fixed uppercase mb-8 tracking-[0.2em]">SUPPORT</h5>
+          <ul class="space-y-4 font-body text-body-sm text-surface-container-low/60">
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Contact Us</a></li>
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Shipping & Returns</a></li>
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">FAQ</a></li>
+            <li><a href="#" class="hover:text-secondary-fixed transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
       </div>
 
       <!-- Newsletter -->
       <div>
-        <h5 class="font-label-lg text-label-lg text-secondary-fixed uppercase mb-8 tracking-widest">NEWSLETTER</h5>
-        <p class="font-body-md text-body-md text-surface-container-low/60 mb-6">Join our elite circle for exclusive drops and prestige events.</p>
-        <form class="flex border-b border-surface-container-low/20 pb-2">
-          <input type="email" placeholder="YOUR EMAIL" class="bg-transparent border-none focus:ring-0 text-surface-container-low placeholder:text-surface-container-low/40 w-full uppercase text-xs tracking-widest">
-          <button type="submit" class="text-secondary-fixed">
-            <span class="material-symbols-outlined">arrow_forward</span>
+        <h5 class="font-body text-label-md text-secondary-fixed uppercase mb-8 tracking-[0.2em]">NEWSLETTER</h5>
+        <p class="font-body text-body-sm text-surface-container-low/60 mb-8 leading-relaxed">Join our elite circle for exclusive drops and prestige events.</p>
+        <form class="group relative">
+          <input type="email" placeholder="YOUR EMAIL" class="bg-transparent border-b border-surface-container-low/20 pb-4 focus:border-secondary-fixed focus:ring-0 text-surface-container-low placeholder:text-surface-container-low/30 w-full font-body text-body-sm tracking-widest outline-none transition-all">
+          <button type="submit" class="absolute right-0 bottom-4 text-secondary-fixed hover:translate-x-1 transition-transform">
+            <span class="material-symbols-outlined">arrow_right_alt</span>
           </button>
         </form>
       </div>
     </div>
 
-    <div class="pt-8 border-t border-surface-container-low/10 flex flex-col md:flex-row items-center justify-between gap-6 font-body-sm text-body-sm text-surface-container-low/40">
+    <div class="pt-12 border-t border-surface-container-low/10 flex flex-col md:flex-row items-center justify-between gap-8 font-body text-[11px] text-surface-container-low/30 tracking-[0.1em]">
       <p>© {{ 'now' | date: "%Y" }} LUXE AURA PARIS. ALL RIGHTS RESERVED.</p>
-      <div class="flex gap-8">
-        <a href="#" class="hover:text-secondary-fixed transition-colors">TERMS OF SERVICE</a>
-        <a href="#" class="hover:text-secondary-fixed transition-colors">PRIVACY POLICY</a>
+      <div class="flex gap-12">
+        <a href="#" class="hover:text-secondary-fixed transition-colors uppercase">TERMS OF SERVICE</a>
+        <a href="#" class="hover:text-secondary-fixed transition-colors uppercase">PRIVACY POLICY</a>
       </div>
     </div>
   </div>

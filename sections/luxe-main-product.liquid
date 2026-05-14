@@ -1,55 +1,64 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 
-<section class="bg-background py-20 px-margin-mobile md:px-margin-desktop">
-  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+<section class="bg-background py-12 md:py-24 px-margin-mobile md:px-margin-desktop">
+  <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
     <!-- Product Gallery -->
-    <div class="space-y-4">
-      <div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center p-12">
+    <div class="space-y-6">
+      <div class="aspect-square bg-white rounded-sm overflow-hidden flex items-center justify-center p-6 md:p-16 border border-surface-container">
         {%- if product.featured_image != blank -%}
-          {{ product.featured_image | image_url: width: 1200 | image_tag: class: 'w-full h-full object-contain hover:scale-105 transition-transform duration-700' }}
+          {{ product.featured_image | image_url: width: 1200 | image_tag: class: 'w-full h-full object-contain hover:scale-105 transition-transform duration-1000' }}
         {%- else -%}
           <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkRQl8tsTi748apldWsA5bIG9McE3KLWcZIGZHsIxoIUINNlWK28b_lN4ju5n342SRcUkhAaHkjm3MuII31UcPF9WPAXudEXn8KhUJ9hzpvKd2-Xrp4X9pGnPapgVP3KeSlhe5QuQy356iIU8Eg8vXlOeimbMRl9xqKnI4ix5QzgCwjL7Eg6PksURkZ1yN42G6H_C5prZpEXf_o8uv0kg2o-f9msZvjZ8tTWYLzjLFfxoA-YPFWKpRKofQRNlVhP4RWV9vLoPnzA" class="w-full h-full object-contain" alt="Signature Gold">
         {%- endif -%}
       </div>
+      
+      {%- if product.images.size > 1 -%}
       <div class="grid grid-cols-4 gap-4">
         {%- for image in product.images limit: 4 -%}
-          <div class="aspect-square bg-surface-container rounded overflow-hidden cursor-pointer border-2 {% if forloop.first %}border-[#D4AF37]{% else %}border-transparent{% endif %}">
-            {{ image | image_url: width: 300 | image_tag: class: 'w-full h-full object-cover' }}
+          <div class="aspect-square bg-white rounded-sm overflow-hidden cursor-pointer border {% if forloop.first %}border-[#D4AF37]{% else %}border-surface-container{% endif %}">
+            {{ image | image_url: width: 400 | image_tag: class: 'w-full h-full object-cover hover:opacity-80 transition-opacity' }}
           </div>
         {%- endfor -%}
       </div>
+      {%- endif -%}
     </div>
 
     <!-- Product Details -->
-    <div class="flex flex-col">
+    <div class="flex flex-col justify-center">
       <div class="mb-8">
-        <span class="inline-block bg-[#D4AF37]/10 text-[#D4AF37] font-label-md text-label-md uppercase px-3 py-1 rounded mb-4">SIGNATURE SERIES</span>
-        <h1 class="font-headline-xl text-headline-xl text-primary mb-4">{{ product.title | default: 'Signature Gold' }}</h1>
-        <div class="flex items-center gap-4 mb-6">
-          <p class="font-headline-md text-headline-md text-primary">{{ current_variant.price | money | default: '$245.00' }}</p>
-          <div class="flex text-[#D4AF37]">
-            <span class="material-symbols-outlined text-[18px]">star</span>
-            <span class="material-symbols-outlined text-[18px]">star</span>
-            <span class="material-symbols-outlined text-[18px]">star</span>
-            <span class="material-symbols-outlined text-[18px]">star</span>
-            <span class="material-symbols-outlined text-[18px]">star</span>
-            <span class="text-on-surface-variant text-body-sm ml-2">(48 Reviews)</span>
+        <span class="inline-block text-[#D4AF37] font-body text-label-md uppercase tracking-[0.3em] mb-4">SIGNATURE SERIES</span>
+        <h1 class="font-display text-headline-xl text-primary mb-6 leading-tight">{{ product.title | default: 'Signature Gold' }}</h1>
+        
+        <div class="flex items-center gap-6 mb-8">
+          <p class="font-display text-headline-md text-primary">{{ current_variant.price | money | default: '$245.00' }}</p>
+          <div class="flex items-center text-[#D4AF37]">
+            <div class="flex mr-2">
+                {% for i in (1..5) %}
+                    <span class="material-symbols-outlined text-[18px]">star</span>
+                {% endfor %}
+            </div>
+            <span class="text-on-surface-variant font-body text-body-sm">(48 Reviews)</span>
           </div>
         </div>
-        <p class="font-body-lg text-body-lg text-on-surface-variant">
-          {{ product.description | default: 'An opulent blend of pure saffron, Bulgarian rose, and aged oud. Signature Gold is the pinnacle of our collection, designed for those who command presence and exude timeless elegance.' }}
-        </p>
+        
+        <div class="prose prose-sm font-body text-body-md text-on-surface-variant max-w-none mb-10">
+          {{ product.description | default: 'An opulent blend of pure saffron, Bulgarian rose, and aged oud. Signature Gold is the pinnacle of our collection, designed for those who command presence.' }}
+        </div>
       </div>
 
       <!-- Variant Selectors -->
       {%- if product.has_only_default_variant == false -%}
-        <div class="space-y-6 mb-10">
+        <div class="space-y-8 mb-12">
           {%- for option in product.options_with_values -%}
-            <div>
-              <label class="font-label-lg text-label-lg text-primary uppercase mb-3 block">{{ option.name }}</label>
-              <div class="flex flex-wrap gap-3">
+            <div x-data="{ selected: '{{ option.selected_value }}' }">
+              <label class="font-body text-label-md text-primary uppercase tracking-widest mb-4 block">{{ option.name }}</label>
+              <div class="flex flex-wrap gap-4">
                 {%- for value in option.values -%}
-                  <button class="px-6 py-2 border {% if option.selected_value == value %}border-[#D4AF37] bg-[#D4AF37]/5 text-[#D4AF37]{% else %}border-outline-variant text-on-surface-variant{% endif %} font-label-md text-label-md rounded hover:border-[#D4AF37] transition-all">
+                  <button 
+                    @click="selected = '{{ value }}'"
+                    class="px-8 py-3 border rounded-sm font-body text-body-sm transition-all tracking-widest uppercase"
+                    :class="selected === '{{ value }}' ? 'border-[#D4AF37] bg-[#D4AF37]/5 text-[#D4AF37]' : 'border-outline-variant text-on-surface-variant hover:border-primary'"
+                  >
                     {{ value }}
                   </button>
                 {%- endfor -%}
@@ -60,39 +69,39 @@
       {%- endif -%}
 
       <!-- Add to Cart -->
-      <div class="space-y-4 mb-12">
-        <div class="flex gap-4">
-          <div class="flex items-center border border-outline-variant rounded px-4 py-3">
-            <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">remove</span></button>
-            <input type="number" value="1" class="w-12 text-center border-none focus:ring-0 font-body-lg text-primary bg-transparent">
-            <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">add</span></button>
-          </div>
-          <button class="flex-1 bg-primary text-secondary-fixed font-label-lg text-label-lg uppercase py-4 rounded hover:bg-surface-container-highest transition-all flex items-center justify-center gap-3">
-            ADD TO BAG <span class="material-symbols-outlined">shopping_bag</span>
-          </button>
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <div class="flex items-center border border-outline-variant rounded-sm px-6 py-4 bg-white">
+          <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">remove</span></button>
+          <input type="number" value="1" class="w-16 text-center border-none focus:ring-0 font-body text-body-lg text-primary bg-transparent">
+          <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">add</span></button>
         </div>
-        <button class="w-full border border-primary text-primary font-label-lg text-label-lg uppercase py-4 rounded hover:bg-primary hover:text-secondary-fixed transition-all">
-          BUY IT NOW
+        <button class="flex-1 bg-primary text-secondary-fixed font-body text-label-lg uppercase py-5 rounded-sm hover:bg-surface-container-highest transition-all flex items-center justify-center gap-3 tracking-[0.2em] group">
+          ADD TO BAG 
+          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">shopping_bag</span>
         </button>
       </div>
 
       <!-- Accordions -->
-      <div class="border-t border-outline-variant">
-        <div class="py-4 border-b border-outline-variant group cursor-pointer">
-          <div class="flex items-center justify-between">
-            <span class="font-label-lg text-label-lg text-primary uppercase">Scent Notes</span>
-            <span class="material-symbols-outlined">expand_more</span>
-          </div>
-          <div class="mt-4 hidden group-hover:block font-body-md text-on-surface-variant">
-            Top: Saffron, Raspberry, Thyme<br>
-            Heart: Jasmine, Olibanum<br>
-            Base: Leather, Black Suede, Amber, Wood
+      <div class="border-t border-outline-variant pt-4" x-data="{ open: 1 }">
+        <div class="py-6 border-b border-outline-variant">
+          <button @click="open = open === 1 ? 0 : 1" class="w-full flex items-center justify-between text-left">
+            <span class="font-body text-label-lg text-primary uppercase tracking-widest">Scent Notes</span>
+            <span class="material-symbols-outlined transition-transform duration-300" :class="open === 1 ? 'rotate-180' : ''">expand_more</span>
+          </button>
+          <div x-show="open === 1" x-collapse class="mt-6 font-body text-body-md text-on-surface-variant leading-relaxed">
+            <p class="mb-2"><strong class="text-primary">Top:</strong> Saffron, Raspberry, Thyme</p>
+            <p class="mb-2"><strong class="text-primary">Heart:</strong> Jasmine, Olibanum</p>
+            <p><strong class="text-primary">Base:</strong> Leather, Black Suede, Amber, Wood</p>
           </div>
         </div>
-        <div class="py-4 border-b border-outline-variant group cursor-pointer">
-          <div class="flex items-center justify-between">
-            <span class="font-label-lg text-label-lg text-primary uppercase">Sustainability</span>
-            <span class="material-symbols-outlined">expand_more</span>
+        
+        <div class="py-6 border-b border-outline-variant">
+          <button @click="open = open === 2 ? 0 : 2" class="w-full flex items-center justify-between text-left">
+            <span class="font-body text-label-lg text-primary uppercase tracking-widest">How to use</span>
+            <span class="material-symbols-outlined transition-transform duration-300" :class="open === 2 ? 'rotate-180' : ''">expand_more</span>
+          </button>
+          <div x-show="open === 2" x-collapse class="mt-6 font-body text-body-md text-on-surface-variant leading-relaxed">
+            Apply to pulse points: neck, chest, and wrists for the most enduring fragrance trail.
           </div>
         </div>
       </div>

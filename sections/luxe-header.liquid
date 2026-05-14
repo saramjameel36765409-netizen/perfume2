@@ -1,47 +1,91 @@
-<header class="sticky top-0 z-50 bg-primary/90 backdrop-blur-md border-b border-surface-container-highest/20 px-margin-mobile md:px-margin-desktop py-4">
+<header class="sticky top-0 z-50 bg-primary/95 backdrop-blur-md border-b border-surface-container-highest/10 px-margin-mobile md:px-margin-desktop py-4" x-data="{ mobileMenuOpen: false }">
   <div class="max-w-container-max mx-auto flex items-center justify-between">
     <!-- Mobile Menu Toggle -->
-    <button class="md:hidden text-secondary-fixed">
-      <span class="material-symbols-outlined">menu</span>
+    <button class="md:hidden text-secondary-fixed p-2" @click="mobileMenuOpen = !mobileMenuOpen">
+      <span class="material-symbols-outlined" x-text="mobileMenuOpen ? 'close' : 'menu'">menu</span>
     </button>
 
     <!-- Logo -->
     <a href="/" class="flex flex-col items-center group">
-      <span class="font-display-lg text-[24px] md:text-[32px] text-secondary-fixed italic leading-none group-hover:scale-105 transition-transform">{{ section.settings.logo_text | default: 'LUXE AURA' }}</span>
-      <span class="font-body-sm text-[10px] md:text-[12px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">{{ section.settings.tagline | default: 'PARIS' }}</span>
+      <span class="font-display text-[24px] md:text-[32px] text-secondary-fixed italic leading-none group-hover:scale-105 transition-transform">{{ section.settings.logo_text | default: 'LUXE AURA' }}</span>
+      <span class="font-body text-[10px] md:text-[12px] text-secondary-fixed uppercase tracking-[0.3em] mt-1">{{ section.settings.tagline | default: 'PARIS' }}</span>
     </a>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-8">
       {%- for link in section.settings.menu.links -%}
-        <a href="{{ link.url }}" class="font-label-md text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">{{ link.label }}</a>
+        <a href="{{ link.url }}" class="font-body text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">{{ link.label }}</a>
       {%- endfor -%}
       {%- if section.settings.menu == blank -%}
-        <a href="#" class="font-label-md text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">SHOP</a>
-        <a href="#" class="font-label-md text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">COLLECTIONS</a>
-        <a href="#" class="font-label-md text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">OUR STORY</a>
+        <a href="#" class="font-body text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">SHOP</a>
+        <a href="#" class="font-body text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">COLLECTIONS</a>
+        <a href="#" class="font-body text-label-md text-surface-container-low hover:text-secondary-fixed transition-colors uppercase tracking-widest">OUR STORY</a>
       {%- endif -%}
     </nav>
 
     <!-- Icons -->
-    <div class="flex items-center gap-4 md:gap-6 text-secondary-fixed">
-      <button class="hover:scale-110 transition-transform">
+    <div class="flex items-center gap-2 md:gap-6 text-secondary-fixed">
+      <button class="p-2 hover:scale-110 transition-transform">
         <span class="material-symbols-outlined">search</span>
       </button>
-      <a href="/account" class="hidden md:block hover:scale-110 transition-transform">
+      <a href="/account" class="hidden md:block p-2 hover:scale-110 transition-transform">
         <span class="material-symbols-outlined">person</span>
       </a>
-      <a href="/cart" class="relative hover:scale-110 transition-transform">
+      <a href="/cart" class="relative p-2 hover:scale-110 transition-transform">
         <span class="material-symbols-outlined">shopping_bag</span>
         {%- if cart.item_count > 0 -%}
-          <span class="absolute -top-1 -right-1 bg-[#D4AF37] text-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+          <span class="absolute top-1 right-1 bg-[#D4AF37] text-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
             {{ cart.item_count }}
           </span>
         {%- endif -%}
       </a>
     </div>
   </div>
+
+  <!-- Mobile Menu Drawer (requires Alpine.js or simple JS) -->
+  <div 
+    x-show="mobileMenuOpen" 
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+    class="fixed inset-0 z-[60] bg-primary md:hidden"
+    style="display: none;"
+  >
+    <div class="flex flex-col h-full p-8">
+      <div class="flex justify-between items-center mb-12">
+        <span class="font-display text-2xl text-secondary-fixed italic">Menu</span>
+        <button class="text-secondary-fixed" @click="mobileMenuOpen = false">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-8">
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}" class="font-display text-3xl text-surface-container-low italic">{{ link.label }}</a>
+        {%- endfor -%}
+        {%- if section.settings.menu == blank -%}
+          <a href="#" class="font-display text-3xl text-surface-container-low italic">SHOP</a>
+          <a href="#" class="font-display text-3xl text-surface-container-low italic">COLLECTIONS</a>
+          <a href="#" class="font-display text-3xl text-surface-container-low italic">OUR STORY</a>
+        {%- endif -%}
+      </nav>
+      <div class="mt-auto pt-8 border-t border-surface-container-highest/20 flex flex-col gap-6">
+        <a href="/account" class="flex items-center gap-4 text-secondary-fixed">
+          <span class="material-symbols-outlined">person</span>
+          <span class="font-body text-lg uppercase tracking-widest">Account</span>
+        </a>
+        <div class="flex gap-4">
+            <!-- Social links would go here -->
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
+
+<!-- Add Alpine.js for the mobile menu toggle -->
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 {% schema %}
 {
