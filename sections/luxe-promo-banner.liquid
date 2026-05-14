@@ -1,6 +1,6 @@
-<section class="relative bg-surface-container-high overflow-hidden py-32 flex items-center justify-center min-h-[500px]">
+<section class="relative bg-surface-container-high overflow-hidden py-32 flex items-center justify-center min-h-[500px]" x-data="{ scrollY: 0 }" @scroll.window="scrollY = window.pageYOffset">
   <!-- Large Background Text -->
-  <div class="absolute inset-0 flex items-center justify-center z-0 opacity-[0.06] pointer-events-none">
+  <div class="absolute inset-0 flex items-center justify-center z-0 opacity-[0.06] pointer-events-none" :style="`transform: translateX(${(scrollY * 0.1) - 100}px)`">
     <span class="font-display-lg text-[120px] md:text-[200px] text-primary whitespace-nowrap leading-none font-bold tracking-tighter">{{ section.settings.bg_text }}</span>
   </div>
   
