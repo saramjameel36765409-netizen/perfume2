@@ -24,62 +24,89 @@
     </div>
 
     <!-- Product Details -->
-    <div class="flex flex-col justify-center">
-      <div class="mb-8">
-        <span class="inline-block text-[#D4AF37] font-body text-label-md uppercase tracking-[0.3em] mb-4">SIGNATURE SERIES</span>
-        <h1 class="font-display text-headline-xl text-primary mb-6 leading-tight">{{ product.title | default: 'Signature Gold' }}</h1>
+    <div class="flex flex-col justify-center" x-data="{ 
+        selectedVariantId: {{ current_variant.id }},
+        selectedVariantPrice: '{{ current_variant.price | money }}',
+        quantity: 1,
+        variants: [
+          {%- for variant in product.variants -%}
+            {
+              id: {{ variant.id }},
+              title: '{{ variant.title | escape }}',
+              price: '{{ variant.price | money }}',
+              available: {{ variant.available }},
+              options: {{ variant.options | json }}
+            }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]
+    }">
+      {%- form 'product', product, class: 'product-form' -%}
+        <input type="hidden" name="id" :value="selectedVariantId">
         
-        <div class="flex items-center gap-6 mb-8">
-          <p class="font-display text-headline-md text-primary">{{ current_variant.price | money | default: '$245.00' }}</p>
-          <div class="flex items-center text-[#D4AF37]">
-            <div class="flex mr-2">
-                {% for i in (1..5) %}
-                    <span class="material-symbols-outlined text-[18px]">star</span>
-                {% endfor %}
+        <div class="mb-8">
+          <span class="inline-block text-[#D4AF37] font-body text-label-md uppercase tracking-[0.3em] mb-4">SIGNATURE SERIES</span>
+          <h1 class="font-display text-headline-xl text-primary mb-6 leading-tight">{{ product.title | default: 'Signature Gold' }}</h1>
+          
+          <div class="flex items-center gap-6 mb-8">
+            <p class="font-display text-headline-md text-primary" x-text="selectedVariantPrice">{{ current_variant.price | money | default: '$245.00' }}</p>
+            <div class="flex items-center text-[#D4AF37]">
+              <div class="flex mr-2">
+                  {% for i in (1..5) %}
+                      <span class="material-symbols-outlined text-[18px]">star</span>
+                  {% endfor %}
+              </div>
+              <span class="text-on-surface-variant font-body text-body-sm">(48 Reviews)</span>
             </div>
-            <span class="text-on-surface-variant font-body text-body-sm">(48 Reviews)</span>
+          </div>
+          
+          <div class="prose prose-sm font-body text-body-md text-on-surface-variant max-w-none mb-10">
+            {{ product.description }}
           </div>
         </div>
-        
-        <div class="prose prose-sm font-body text-body-md text-on-surface-variant max-w-none mb-10">
-          {{ product.description | default: 'An opulent blend of pure saffron, Bulgarian rose, and aged oud. Signature Gold is the pinnacle of our collection, designed for those who command presence.' }}
-        </div>
-      </div>
 
-      <!-- Variant Selectors -->
-      {%- if product.has_only_default_variant == false -%}
-        <div class="space-y-8 mb-12">
-          {%- for option in product.options_with_values -%}
-            <div x-data="{ selected: '{{ option.selected_value }}' }">
-              <label class="font-body text-label-md text-primary uppercase tracking-widest mb-4 block">{{ option.name }}</label>
-              <div class="flex flex-wrap gap-4">
-                {%- for value in option.values -%}
-                  <button 
-                    @click="selected = '{{ value }}'"
-                    class="px-8 py-3 border rounded-sm font-body text-body-sm transition-all tracking-widest uppercase"
-                    :class="selected === '{{ value }}' ? 'border-[#D4AF37] bg-[#D4AF37]/5 text-[#D4AF37]' : 'border-outline-variant text-on-surface-variant hover:border-primary'"
-                  >
-                    {{ value }}
-                  </button>
-                {%- endfor -%}
+        <!-- Variant Selectors -->
+        {%- if product.has_only_default_variant == false -%}
+          <div class="space-y-8 mb-12">
+            {%- for option in product.options_with_values -%}
+              <div>
+                <label class="font-body text-label-md text-primary uppercase tracking-widest mb-4 block">{{ option.name }}</label>
+                <div class="flex flex-wrap gap-4">
+                  {%- for value in option.values -%}
+                    <button 
+                      type="button"
+                      @click="
+                        $dispatch('variant-change', { optionIndex: {{ forloop.parentloop.index0 }}, value: '{{ value }}' });
+                        let newVariant = variants.find(v => v.options[{{ forloop.parentloop.index0 }}] === '{{ value }}');
+                        if (newVariant) {
+                          selectedVariantId = newVariant.id;
+                          selectedVariantPrice = newVariant.price;
+                        }
+                      "
+                      class="px-8 py-3 border rounded-sm font-body text-body-sm transition-all tracking-widest uppercase"
+                      :class="variants.find(v => v.id === selectedVariantId).options[{{ forloop.parentloop.index0 }}] === '{{ value }}' ? 'border-[#D4AF37] bg-[#D4AF37]/5 text-[#D4AF37]' : 'border-outline-variant text-on-surface-variant hover:border-primary'"
+                    >
+                      {{ value }}
+                    </button>
+                  {%- endfor -%}
+                </div>
               </div>
-            </div>
-          {%- endfor -%}
-        </div>
-      {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
 
-      <!-- Add to Cart -->
-      <div class="flex flex-col sm:flex-row gap-4 mb-12">
-        <div class="flex items-center border border-outline-variant rounded-sm px-6 py-4 bg-white">
-          <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">remove</span></button>
-          <input type="number" value="1" class="w-16 text-center border-none focus:ring-0 font-body text-body-lg text-primary bg-transparent">
-          <button class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">add</span></button>
+        <!-- Add to Cart -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+          <div class="flex items-center border border-outline-variant rounded-sm px-6 py-4 bg-white">
+            <button type="button" @click="if(quantity > 1) quantity--" class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">remove</span></button>
+            <input type="number" name="quantity" x-model="quantity" class="w-16 text-center border-none focus:ring-0 font-body text-body-lg text-primary bg-transparent">
+            <button type="button" @click="quantity++" class="text-primary hover:text-[#D4AF37]"><span class="material-symbols-outlined text-[20px]">add</span></button>
+          </div>
+          <button type="submit" class="flex-1 bg-primary text-secondary-fixed font-body text-label-lg uppercase py-5 rounded-sm hover:bg-surface-container-highest transition-all flex items-center justify-center gap-3 tracking-[0.2em] group" :disabled="!variants.find(v => v.id === selectedVariantId).available">
+            <span x-text="variants.find(v => v.id === selectedVariantId).available ? 'ADD TO BAG' : 'OUT OF STOCK'">ADD TO BAG</span>
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">shopping_bag</span>
+          </button>
         </div>
-        <button class="flex-1 bg-primary text-secondary-fixed font-body text-label-lg uppercase py-5 rounded-sm hover:bg-surface-container-highest transition-all flex items-center justify-center gap-3 tracking-[0.2em] group">
-          ADD TO BAG 
-          <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">shopping_bag</span>
-        </button>
-      </div>
+      {%- endform -%}
 
       <!-- Accordions -->
       <div class="border-t border-outline-variant pt-4" x-data="{ open: 1 }">
